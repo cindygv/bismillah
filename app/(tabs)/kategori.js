@@ -4,9 +4,9 @@ import { Header } from "../../components";
 const Kategori = () => {
     return (
         <>
-            <Header title={"Kategori"} />
+            <Header title={"Kategor"} />
             <Center flex={1}>
-                <Heading>Kategori</Heading>
+                <Heading>Kategori Ormawa</Heading>
             </Center>
         </>
     );
