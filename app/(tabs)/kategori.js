@@ -4,6 +4,7 @@ import { Center, Heading } from "@gluestack-ui/themed";
 import { Header } from "../../components";
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity, View } from "react-native";
+import { Link } from 'expo-router';
 
 const Kategori = ({ navigation }) => {
     // Fungsi untuk menavigasi ke halaman kategori tertentu
@@ -17,35 +18,41 @@ const Kategori = ({ navigation }) => {
             <Header title={"Kategori"} />
             <Center flex={1}>
                 {/* Icon dan label untuk setiap kategori */}
-                <TouchableOpacity onPress={() => navigateToCategory("ormawa")}>
+                <TouchableOpacity>
                     <View style={{ alignItems: 'center' }}>
                         <Ionicons name="school-outline" size={40} color="black" />
                         <Heading mb="$1">ORMAWA</Heading>
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigateToCategory("ukm")}>
+                <TouchableOpacity >
                     <View style={{ alignItems: 'center' }}>
                         <Ionicons name="people-outline" size={40} color="black" />
                         <Heading mb="$1">UKM</Heading>
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigateToCategory("lomba")}>
+                <TouchableOpacity >
+                <Link href="/lomba">
                     <View style={{ alignItems: 'center' }}>
                         <Ionicons name="trophy-outline" size={40} color="black" />
                         <Heading mb="$1">Lomba</Heading>
                     </View>
+                    </Link>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigateToCategory("kepanitiaan")}>
-                    <View style={{ alignItems: 'center' }}>
-                        <Ionicons name="briefcase-outline" size={40} color="black" />
-                        <Heading mb="$1">Kepanitiaan</Heading>
-                    </View>
-                </TouchableOpacity>
+                
+                    <TouchableOpacity >
+                    <Link href="/kepanitiaan">
+                        <View style={{ alignItems: 'center' }}>
+                            <Ionicons name="briefcase-outline" size={40} color="black" />
+                            <Heading mb="$1">Kepanitiaan</Heading>
+                        </View>
+                        </Link>
+                    </TouchableOpacity>
+                
 
-                <TouchableOpacity onPress={() => navigateToCategory("seminar")}>
+                <TouchableOpacity>
                     <View style={{ alignItems: 'center' }}>
                         <Ionicons name="megaphone-outline" size={40} color="black" />
                         <Heading mb="$1">Seminar</Heading>
