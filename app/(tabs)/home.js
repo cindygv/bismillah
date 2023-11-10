@@ -6,7 +6,7 @@ const Home = () => {
         <>
             <Header title={"Home"} />
             <Center flex={1}>
-                <Heading>Home</Heading>
+                <Heading>Halo</Heading>
             </Center>
         </>
     );
