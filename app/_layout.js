@@ -12,6 +12,8 @@ const StackLayout = () => {
                 <Stack.Screen name="index" options={noHead} />
                 <Stack.Screen name="news-detail" options={noHead} />
                 <Stack.Screen name="web" options={noHead} />
+                <Stack.Screen name="kepanitiaan" options={noHead} />
+                <Stack.Screen name="lomba" options={noHead} />
             </Stack>
         </GluestackUIProvider>
     );
