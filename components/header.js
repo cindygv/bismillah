@@ -16,7 +16,7 @@ const Header = ({ title, withBack = false, withClose = false }) => {
                         {!withBack ? (
                             <>
                                 <Image
-                                    source={require("../assets/msi.png")}
+                                    source={require("../assets/talent.png")}
                                     w="$10"
                                     h="$10"
                                     alt="Telpro Logo"
