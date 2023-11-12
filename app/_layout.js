@@ -9,9 +9,6 @@ const StackLayout = () => {
         <GluestackUIProvider config={config}>
             <Stack>
                 <Stack.Screen name="(tabs)" options={noHead} />
-                <Stack.Screen name="index" options={noHead} />
-                <Stack.Screen name="news-detail" options={noHead} />
-                <Stack.Screen name="web" options={noHead} />
                 <Stack.Screen name="kepanitiaan" options={noHead} />
                 <Stack.Screen name="lomba" options={noHead} />
                 <Stack.Screen name="ormawa" options={noHead} />
@@ -22,6 +19,8 @@ const StackLayout = () => {
                 <Stack.Screen name="hmti" options={noHead} />
                 <Stack.Screen name="dpm" options={noHead} />
                 <Stack.Screen name="penelitian" options={noHead} />
+                <Stack.Screen name="login" options={noHead} />
+                <Stack.Screen name="register" options={noHead} />
             </Stack>
         </GluestackUIProvider>
     );
