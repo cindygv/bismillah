@@ -40,10 +40,10 @@ const List = () => {
     // Arrow Function with destructured argument
     const renderItem = ({ item }) => {
         return (
-            <Pressable padding={10} borderBottomColor="#800000" borderBottomWidth={10} onPress={() => alert("Pressed")}>
+            <Pressable padding={50} borderBottomColor="#800000" borderBottomWidth={10} onPress={() => alert("Ayo segera join!")}>
                 <Box>
-                    <Image source={{ uri: item.image }} style={styles.image} />
-                    <Text style={styles.text}>{item.title}</Text>
+                    <Image source={{ uri: item.image }} height={500} width={null} />
+                    <Text fontSize={18} paddingTop={10} >{item.title}</Text>
                 </Box>
             </Pressable>
         );
@@ -60,17 +60,5 @@ const List = () => {
         </Box>
     );
 };
-
-// Styles
-const styles = StyleSheet.create({
-    image: {
-        height: 600,
-        width: null,
-    },
-    text: {
-        fontSize: 18,
-        paddingTop: 10,
-    },
-});
 
 export default List;
