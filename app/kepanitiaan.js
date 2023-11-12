@@ -41,17 +41,14 @@ const Kepanitiaan = () => {
         <Text>
           <Text style={{ fontWeight: "bold" }}>Surabaya, Oktober 2022</Text>
             <Text>Detail</Text>
-            <Separator height={10} />   
             <Text>° Close Regist Sabtu, 4 November 2023 17:00 WIB</Text>
-            <Separator height={10} />
             <Text>° Technical meeting Sabtu, 4 November 2023</Text>
-            <Separator height={10} />
             <Text>° Match day start 19:30 WIB Sabtu, 4 November 2023</Text>
             <Text>° Tournament ini Khusus Mahasiswa ITTS (Free Regist)</Text>
             <Text>° Online Tournament</Text>
             <Text>° No Multi Slot, No Multi Team</Text>
             <Text>° Format Tournament Single Elimination (Sistem Gugur)</Text>
-
+            <Text>
             Information
             ° System:
             1. Qualification Round : Sistem *Custom Classic Wajib Pick Hero Melisa - BO1*
@@ -77,10 +74,8 @@ const Kepanitiaan = () => {
             Bronze dan Final Match live Youtube ITTS Esport
 
             CP:
-            082234766193 (naufal)    
-        </Text>
-        <Text>
-            
+            082234766193 (naufal)
+            </Text>   
         </Text>
       </View>
       </Center>
