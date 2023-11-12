@@ -36,7 +36,7 @@ const datas = [
 ];
 
 // Functional Component
-const List = () => {
+const Home = () => {
     // Arrow Function with destructured argument
     const renderItem = ({ item }) => {
         return (
@@ -61,4 +61,4 @@ const List = () => {
     );
 };
 
-export default List;
+export default Home;
