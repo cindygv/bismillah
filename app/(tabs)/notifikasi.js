@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
-
-
+import { VStack, Text, FlatList } from '@gluestack-ui/themed';
 
 const NotificationScreen = () => {
   const dummyNotifications = [
@@ -9,51 +7,25 @@ const NotificationScreen = () => {
     { id: '2', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! Open Recruitment Panitia PKKMB hanya sampai 7 Agustus 2023.' },
     { id: '3', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! IKUTI Seminar hanya sampai 12 Agustus 2023.' },
     { id: '4', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! Open Recruitment UKM ECITTS hanya sampai 1 Januari 2024.' },
-
   ];
 
+  const renderNotificationItem = ({ item }) => (
+    <VStack marginBottom={16} padding={16} borderRadius={8} backgroundColor="#e0e0e0">
+      <Text fontSize={18} fontWeight="bold" marginBottom={8}>{item.title}</Text>
+      <Text fontSize={16} color="gray">{item.message}</Text>
+    </VStack>
+  );
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Notifikasi</Text>
+    <VStack flex={1} padding={16}>
+      <Text fontSize={24} fontWeight="bold" marginBottom={16}>Notifikasi</Text>
       <FlatList
         data={dummyNotifications}
         keyExtractor={item => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.notificationItem}>
-            <Text style={styles.notificationTitle}>{item.title}</Text>
-            <Text style={styles.notificationMessage}>{item.message}</Text>
-          </View>
-        )}
+        renderItem={renderNotificationItem}
       />
-    </View>
+    </VStack>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-  },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-  notificationItem: {
-    marginBottom: 16,
-    padding: 16,
-    borderRadius: 8,
-    backgroundColor: '#e0e0e0',
-  },
-  notificationTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-  notificationMessage: {
-    fontSize: 16,
-    color: 'gray',
-  },
-});
 
 export default NotificationScreen;
