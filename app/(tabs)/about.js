@@ -23,7 +23,7 @@ const About = () => {
                atau platform pengembangan bakat 
                dan minat Mahasiswa/i       ITTelkom Surabaya.
               </Text>
-              <Center><Text>PROFIL DEVELOPER</Text></Center>
+              <Center><Text marginTop={10}>PROFIL DEVELOPER</Text></Center>
               <Text fontSize={15}></Text>
               <HStack>
               <Image
@@ -69,6 +69,10 @@ const About = () => {
             </VStack>
           </Box>
         </Box>
+      </Box>
+      <Box>
+        <Text marginStart={20} marginTop={10}>contact developer +628472846772</Text>
+        <HStack><Text marginStart={20}>email for business </Text><Text color="blue">telport@gmail.com</Text></HStack>
       </Box>
     </ScrollView>
 
