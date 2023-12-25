@@ -1,94 +1,107 @@
-import {
-  Image,
-  HStack,
-  VStack,
-  Text,
-  ScrollView,
-} from "@gluestack-ui/themed";
+import { Center, Heading } from "@gluestack-ui/themed";
 import { Header } from "../components";
 import { Link } from "expo-router";
+import { ScrollView, Image, View, Text, StyleSheet } from "react-native";
+import Separator from "../components/separator";
+import { Tabs } from "expo-router/tabs";
+
 
 const Penelitian = () => {
-  return (
-    <>
-      <Header title={"PENELITIAN"} />
+    return (
+        <ScrollView>
+        <Center>
+        <View style={styles.content}>
+        <Separator height={10} />
+        <Heading>
+            Penelitian
+        </Heading>
+        <Separator height={10} />
+        <Image
+          source={{
+            uri: "https://scontent-xsp1-3.cdninstagram.com/v/t51.2885-15/397536968_1598243730979677_5059249394304513035_n.webp?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEwODAuc2RyIn0&_nc_ht=scontent-xsp1-3.cdninstagram.com&_nc_cat=109&_nc_ohc=WtsU6fMPEmMAX_wAKYI&edm=ACWDqb8BAAAA&ccb=7-5&ig_cache_key=MzIyNzYwNzA0NTUyNjMwNjE3NQ%3D%3D.2-ccb7-5&oh=00_AfBMX9mJ8QLEnSXFaxTtkmj-5MLGIfbfOv34ngy2jh5qqQ&oe=65547E4B&_nc_sid=ee9879",
+          }}
+          style={styles.mainImage}
+        />
+        <Separator height={10} />
+        <Text>
+          <Text style={{ fontWeight: "bold" }}>Surabaya, Oktober 2022</Text> -
+          Ada sebuah sebutan baru-baru ini yang kerap dilemparkan pada mereka
+          yang lahir pada tahun 2000-an, generasi strawberi. Pelabelan ini
+          dikarenakan generasi sebelumnya (Boomers dan X) menilai generasi muda
+          lunak dan mudah terluka seperti buah strawberi.
+        </Text>
+        <Separator height={10} />
+        <Image
+          source={{
+            uri: "https://scontent-xsp1-3.cdninstagram.com/v/t51.2885-15/397536968_1598243730979677_5059249394304513035_n.webp?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEwODAuc2RyIn0&_nc_ht=scontent-xsp1-3.cdninstagram.com&_nc_cat=109&_nc_ohc=WtsU6fMPEmMAX_wAKYI&edm=ACWDqb8BAAAA&ccb=7-5&ig_cache_key=MzIyNzYwNzA0NTUyNjMwNjE3NQ%3D%3D.2-ccb7-5&oh=00_AfBMX9mJ8QLEnSXFaxTtkmj-5MLGIfbfOv34ngy2jh5qqQ&oe=65547E4B&_nc_sid=ee9879",
+          }}
+          style={styles.mainImage}
+        />
+        <Separator height={10} />
+        <Text>
+          <Text style={{ fontWeight: "bold" }}>Surabaya, Oktober 2022</Text>
+            <Text>Detail</Text>
+            <Text>° Close Regist Sabtu, 4 November 2023 17:00 WIB</Text>
+            <Text>° Technical meeting Sabtu, 4 November 2023</Text>
+            <Text>° Match day start 19:30 WIB Sabtu, 4 November 2023</Text>
+            <Text>° Tournament ini Khusus Mahasiswa ITTS (Free Regist)</Text>
+            <Text>° Online Tournament</Text>
+            <Text>° No Multi Slot, No Multi Team</Text>
+            <Text>° Format Tournament Single Elimination (Sistem Gugur)</Text>
+            <Text>
+            Information
+            ° System:
+            1. Qualification Round : Sistem *Custom Classic Wajib Pick Hero Melisa - BO1*
+            2. Semifinals - Bronze Match : Sistem *Custom Draft Pick Hero bebas - BO1*
+            3. Final Match : Sistem *Custom Draft Pick Hero bebas - BO3*
 
-    <ScrollView
-          vertical={true} 
-          contentContainerStyle={{ paddingVertical: 1 }} >   
-  <HStack space={"md"} backgroundColor="lightyellow">
-      <Image
-      source={require('../assets/sleep.jpeg')}
-        alt="Gambar sleep"
-        w="$40" 
-        h="$40"
-      />
-      <Link
-        href={{
-         pathname: "/sleepscreen" 
-        }}
-      >
-      <VStack space="md" >
-        <Text>Sleep Tech</Text>
-        <Text>Alat pengatur pola tidur</Text>
-      </VStack>
-    </Link>
-  </HStack>
+            *Note
+            - Jika Draft Pick Tim pada bagian atas bracket first pick (sebelah kiri), bawah second pick (sebelah kanan)*
 
-  <HStack space={"md"} backgroundColor="lightyellow">
-    <Image
-     source={require('../assets/makan.jpeg')}
-      alt="Gambar Makan"
-      w="$40" 
-      h="$40"
-    />
-    <VStack space="md">
-      <Text>Analisis Pola Makan</Text>
-      <Text>Pola Makanan Manusia</Text>
-    </VStack>
-  </HStack>
+            ° All tier
+            ° Open Up To 8 Team
 
-  <HStack space={"md"} backgroundColor="lightyellow">
-    <Image
-      source={require('../assets/taman.jpeg')}
-      alt="Gambar Taman"
-      w="$40" 
-      h="$40"
-    />
-    <VStack space="md">
-      <Text>Taman Teknologi</Text>
-      <Text>Taman Masa Depan</Text>
-    </VStack>
-  </HStack>
+            Prizepool 6000 dm
+            ° Juara 1 : 500 dm/player
+            ° Juara 2 : 400 dm/player
+            ° Juara 3 : 300 dm/player
 
-  <HStack space={"md"} backgroundColor="lightyellow">
-    <Image
-     source={require('../assets/robot.jpeg')}
-      alt="Gambar Robot"
-      w="$40" 
-      h="$40"
-    />
-    <VStack space="md">
-      <Text>Animal Robotic</Text>
-      <Text>Hewan Robot</Text>
-    </VStack>
-  </HStack>
+            *Prizepool bisa berubah tergantung slot
 
-  <HStack space={"md"} backgroundColor="lightyellow" >
-    <Image
-      source={require('../assets/cuaca.jpeg')}
-      alt="Gambar Cuaca"
-      w="$40" 
-      h="$40"
-    />
-    <VStack space="md">
-      <Text>Perubahan Siklus Cuaca</Text>
-      <Text>Teknologi Pengatur Cuaca</Text>
-    </VStack>
-  </HStack>
-  </ScrollView>
-    </>
+            link pendaftaran:
+            https://bit.ly/MelisaSLTSE
+
+            Bronze dan Final Match live Youtube ITTS Esport
+
+            CP:
+            082234766193 (naufal)
+            </Text>   
+        </Text>
+      </View>
+      </Center>
+    </ScrollView>
   );
 };
 
+// Styles
+const styles = StyleSheet.create({
+  titleView: {
+    paddingHorizontal: 15,
+    paddingVertical: 20,
+    backgroundColor: "#eeeeee",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  mainImage: {
+    height: 220,
+    resizeMode: "contain",
+  },
+  content: {
+    padding: 15,
+  },
+});
+
 export default Penelitian;
+

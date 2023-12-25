@@ -17,14 +17,8 @@ const TabsLayout = () => {
                         case "kategori":
                             iconName = "apps-outline";
                             break;
-                        case "notifikasi":
-                            iconName = "notifications-outline";
-                            break;
                         case "profile":
                             iconName = "person-circle-outline";
-                            break;
-                        case "about":
-                            iconName = "information-circle-outline";
                             break;
                     }
                     return (
@@ -50,9 +44,7 @@ const TabsLayout = () => {
         >
             <Tabs.Screen name="home" options={{ title: "Home", ...noHead }} />
             <Tabs.Screen name="kategori" options={{ title: "Kategori", ...noHead }} />
-            <Tabs.Screen name="notifikasi" options={{ title: "Notifikasi", ...noHead }} />
             <Tabs.Screen name="profile" options={{ title: "Profile", ...noHead }} />
-            <Tabs.Screen name="about" options={{ title: "About", ...noHead }} />
             <Tabs.Screen name="login" options={{ title: "Login", ...noHead }} />
         </Tabs>
     );
