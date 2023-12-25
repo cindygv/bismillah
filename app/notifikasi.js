@@ -1,7 +1,10 @@
-import React from 'react';
 import { VStack, Text, FlatList } from '@gluestack-ui/themed';
+import { useNavigation } from "@react-navigation/native";
+import { Header } from '../components';
+
 
 const NotificationScreen = () => {
+  const navigation = useNavigation();
   const dummyNotifications = [
     { id: '1', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! IKUTI Lomba Desain Poster hanya sampai 2 November 2023 ' },
     { id: '2', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! Open Recruitment Panitia PKKMB hanya sampai 7 Agustus 2023.' },
@@ -16,7 +19,12 @@ const NotificationScreen = () => {
     </VStack>
   );
 
+
+
   return (
+    <>
+    <Header title={"Notifikasi"} withBack="true" />
+ 
     <VStack flex={1} padding={16}>
       <Text fontSize={24} fontWeight="bold" marginBottom={16}>Notifikasi</Text>
       <FlatList
@@ -25,7 +33,9 @@ const NotificationScreen = () => {
         renderItem={renderNotificationItem}
       />
     </VStack>
+ 
+    </>
   );
-};
+  }
 
 export default NotificationScreen;

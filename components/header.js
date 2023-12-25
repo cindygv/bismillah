@@ -12,6 +12,10 @@ import { config } from "@gluestack-ui/config";
 const Header = ({ title, withBack = false, withClose = false }) => {
     const trueGray900 = "#800000";
     const navigation = useNavigation();
+    const Notifications = () => {
+        navigation.navigate("notifikasi");
+      };
+    
     return (
         <SafeAreaView>
             <StatusBar barStyle="light" backgroundColor={trueGray900} />
@@ -42,13 +46,10 @@ const Header = ({ title, withBack = false, withClose = false }) => {
                         <Heading color={"$white"}>{title}</Heading>
                     </HStack>
                     <HStack space={"2xl"} alignItems="center">
-                        <Text color="#faf0e6" bold>Talent Portal</Text>
                         <TouchableOpacity>
-                        <Link href="/login">
-                        <Box style={{ alignItems: 'center' }}>
-                            <Text size={20} color="white">Login</Text>
-                        </Box>
-                        </Link>
+                            <TouchableOpacity onPress={Notifications}>
+                                <Ionicons name="notifications" size={32} color="white" />
+                            </TouchableOpacity>
                         </TouchableOpacity>
                     </HStack>
                 </HStack>
