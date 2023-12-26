@@ -5,7 +5,6 @@ import { Image } from "@gluestack-ui/themed"
 import { Link } from 'expo-router';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Header } from "../components";
-import { TouchableOpacity } from "react-native";
 
 const EditProfile = () => {
   const [fullName, setFullName] = useState("Arda Allan Firli Cindy Tegar");
@@ -88,14 +87,9 @@ const EditProfile = () => {
             <Box borderRadius={10} width={"15%"} height={4} bg="white" alignSelf="center" marginTop={20}></Box>
             <HStack justifyContent="space-between" mx={20}>
               <Box></Box>
-              <TouchableOpacity
-                                activeOpacity={0.5}
-                                onPress={() => navigation.goBack()}
-                            >
-                                <Box mr={"$3"}>
-                                  <Icon name="account-cancel" size={50} color="#ffffff" />
-                                </Box>
-                            </TouchableOpacity>
+              <Pressable onPress={EditProfile}>
+                <Icon name="account-edit" size={50} color="#ffffff" />
+              </Pressable>
             </HStack>
             <Box marginTop={-20}  >
               <VStack >

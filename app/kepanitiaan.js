@@ -6,8 +6,11 @@ import Separator from "../components/separator";
 import { Tabs } from "expo-router/tabs";
 
 
+
 const Kepanitiaan = () => {
     return (
+      <>
+      <Header title={"Kepanitiaan"} withBack/>
         <ScrollView>
         <Center>
         <View style={styles.content}>
@@ -80,6 +83,7 @@ const Kepanitiaan = () => {
       </View>
       </Center>
     </ScrollView>
+    </>
   );
 };
 
