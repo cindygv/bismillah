@@ -7,7 +7,7 @@ import {
 import Separator from "../components/separator";
 import { useNavigation, Link } from "expo-router";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { loginUser } from "../actions/AuthAction"
+import { loginAdmin } from "../actions/AuthAction"
 
 
 
@@ -30,10 +30,10 @@ const Login = () => {
 
   const login = () => {
     if (email && password) {
-      loginUser(email, password)
-        .then((user) => {
+      loginAdmin(email, password)
+        .then((admin) => {
           // Pengguna berhasil login, lakukan sesuatu dengan data pengguna jika perlu
-          navigation.replace("(tabs)");
+          navigation.replace("kepanitiaan");
         })
         .catch((error) => {
           // Terjadi kesalahan saat login, tampilkan pesan kesalahan
@@ -46,7 +46,7 @@ const Login = () => {
 
   const navigation = useNavigation();
   const Register = () => {
-    navigation.navigate("register");
+    navigation.navigate("registerAdmin");
   };
   return (
     <>
@@ -70,7 +70,7 @@ const Login = () => {
           <VStack space="xl">
             <Center>
               <Heading color="$text900" lineHeight="$md">
-                Login User
+                Login Admin
               </Heading>
             </Center>
             <VStack space="xs">
@@ -100,17 +100,26 @@ const Login = () => {
             </VStack>
 
             <Button onPress={() => login()} action="negative">
-              <Text bold color="white">Login </Text>
+              <Text bold color="white">Login</Text>
             </Button>
             <Button onPress={Register} action="negative">
               <Text bold color="white">Register</Text>
             </Button>
-            <Button onPress={() => 
-            navigation.navigate("loginAdmin")}>
-              <Text bold color="white">Login sebagai admin</Text>
-            </Button>
+
+            {/* <Link style={{ backgroundColor: "black", width: "100%", height: "15%" }} href="/home">
+              <Center>
+                <Text style={{ color: "white", width: "100%", height: "40px", justifyContent: "center" }}>Login</Text>
+              </Center>
+            </Link> */}
+
           </VStack>
           <Separator height={10} />
+          {/* <Button size="md" variant="solid" action="negative" isDisabled={false} isFocusVisible={false} >
+            <Link href="/register">
+              <ButtonText>Register</ButtonText>
+            </Link>
+            <ButtonIcon />
+          </Button> */}
         </FormControl>
       </Box>
     </>

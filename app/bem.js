@@ -16,7 +16,7 @@ const BEM = () => {
                     source={{
                         uri: "https://instagram.fcgk37-2.fna.fbcdn.net/v/t51.2885-19/242927053_115756297516237_5869469486212388162_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fcgk37-2.fna.fbcdn.net&_nc_cat=101&_nc_ohc=F2yKwbReHzsAX8_cerW&edm=ACWDqb8BAAAA&ccb=7-5&oh=00_AfCzwku-w94j8IY_NXwmM4_fZZ5g27Isn5a5X9d7cbW7Jg&oe=65546B2B&_nc_sid=ee9879",
                     }}
-                    height={500}
+                    height={200}
                     width={500}
                 />
                 <Box height={10} />
