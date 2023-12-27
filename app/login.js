@@ -70,7 +70,7 @@ const Login = () => {
           <VStack space="xl">
             <Center>
               <Heading color="$text900" lineHeight="$md">
-                Login
+                Login User
               </Heading>
             </Center>
             <VStack space="xs">
@@ -100,26 +100,17 @@ const Login = () => {
             </VStack>
 
             <Button onPress={() => login()} action="negative">
-              <Text bold color="white">Login</Text>
+              <Text bold color="white">Login </Text>
             </Button>
             <Button onPress={Register} action="negative">
               <Text bold color="white">Register</Text>
             </Button>
-
-            {/* <Link style={{ backgroundColor: "black", width: "100%", height: "15%" }} href="/home">
-              <Center>
-                <Text style={{ color: "white", width: "100%", height: "40px", justifyContent: "center" }}>Login</Text>
-              </Center>
-            </Link> */}
-
+            <Button onPress={() => 
+            navigation.navigate("loginAdmin")}>
+              <Text bold color="white">Login sebagai admin</Text>
+            </Button>
           </VStack>
           <Separator height={10} />
-          {/* <Button size="md" variant="solid" action="negative" isDisabled={false} isFocusVisible={false} >
-            <Link href="/register">
-              <ButtonText>Register</ButtonText>
-            </Link>
-            <ButtonIcon />
-          </Button> */}
         </FormControl>
       </Box>
     </>
