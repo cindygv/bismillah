@@ -7,7 +7,6 @@ import {
   AlertText,
 } from "@gluestack-ui/themed";
 import Separator from "../components/separator";
-import { Link } from 'expo-router';
 import { registerUser } from "../actions/AuthAction"
 import { useNavigation } from '@react-navigation/native';
 
