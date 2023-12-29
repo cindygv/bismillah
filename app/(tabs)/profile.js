@@ -85,7 +85,7 @@ const Profile = () => {
               </VStack>
               <VStack marginStart={20} marginTop={25}>
                 <Heading color="white" fontWeight="bold" fontSize={20}>NIM :</Heading>
-                  <Text color="white" fontSize={15}>{profile?.nim}</Text>
+                <Text color="white" fontSize={15}>{profile?.nim}</Text>
               </VStack>
               <VStack marginStart={20} marginTop={25}>
                 <Heading color="white" fontWeight="bold" fontSize={20}>Prodi :</Heading>

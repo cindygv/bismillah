@@ -33,7 +33,7 @@ const Login = () => {
       loginAdmin(email, password)
         .then((admin) => {
           // Pengguna berhasil login, lakukan sesuatu dengan data pengguna jika perlu
-          navigation.replace("kepanitiaan");
+          navigation.replace("halamanAdmin");
         })
         .catch((error) => {
           // Terjadi kesalahan saat login, tampilkan pesan kesalahan

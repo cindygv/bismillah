@@ -1,7 +1,8 @@
 import {
     FlatList,
+    StyleSheet,
 } from "react-native";
-import { Box, Image, Text, Pressable } from "@gluestack-ui/themed";
+import { Box, Image, Text, Center, Heading, Pressable, HStack } from "@gluestack-ui/themed";
 import { Header } from "../../components";
 
 // Dummmy Data (Array of Object)
@@ -39,11 +40,11 @@ const datas = [
 ];
 
 // Functional Component
-const Home = () => {
+const List = () => {
     // Arrow Function with destructured argument
     const renderItem = ({ item }) => {
         return (
-            <Pressable padding={50} borderBottomColor="#800000" borderBottomWidth={10} onPress={() => alert("Ayo segera join!")}>
+            <Pressable padding={10} borderBottomColor="#800000" borderBottomWidth={10} onPress={() => alert("Pressed")}>
                 <Box>
                     <Image source={{ uri: item.image }} style={styles.image} alt="gambar" />
                     <Text style={styles.text}>{item.title}</Text>
@@ -64,4 +65,16 @@ const Home = () => {
     );
 };
 
-export default Home;
+// Styles
+const styles = StyleSheet.create({
+    image: {
+        height: 600,
+        width: null,
+    },
+    text: {
+        fontSize: 18,
+        paddingTop: 10,
+    },
+});
+
+export default List;

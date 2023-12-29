@@ -48,7 +48,7 @@ const register = () => {
 
       try {
         const user = await registerUser(data, password);
-        navigation.replace("(tabs)");
+        navigation.replace("login");
       } catch (error) {
         console.log("Error", error.message);
         toggleAlert(error.message);
