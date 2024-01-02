@@ -1,7 +1,7 @@
 import React from 'react';
 import { Center, Heading, Image, Box, Text } from "@gluestack-ui/themed";
 import { Header } from "../components";
-import { View } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { Link } from 'expo-router';
 
 const kepanitiaan = () => {
