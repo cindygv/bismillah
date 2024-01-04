@@ -33,7 +33,7 @@ const Login = () => {
       loginAdmin(email, password)
         .then((admin) => {
           // Pengguna berhasil login, lakukan sesuatu dengan data pengguna jika perlu
-          navigation.replace("halamanAdmin");
+          navigation.replace("admin/halamanAdmin");
         })
         .catch((error) => {
           // Terjadi kesalahan saat login, tampilkan pesan kesalahan
@@ -46,7 +46,7 @@ const Login = () => {
 
   const navigation = useNavigation();
   const Register = () => {
-    navigation.navigate("registerAdmin");
+    navigation.navigate("admin/halamanAdmin");
   };
   return (
     <>
