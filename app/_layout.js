@@ -30,6 +30,7 @@ const StackLayout = () => {
                 <Stack.Screen name="loginAdmin" options={noHead} />
                 <Stack.Screen name="registerAdmin" options={noHead} />
                 <Stack.Screen name="admin/halamanAdmin" options={noHead} />
+                <Stack.Screen name="infoposter" options={noHead} />
             </Stack>
 
         </GluestackUIProvider>

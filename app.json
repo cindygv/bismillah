@@ -8,11 +8,7 @@
     "userInterfaceStyle": "light",
     "scheme": "my-scheme",
     "splash": {
-<<<<<<< HEAD
-      "image": "./assets/splash.png",
-=======
       "image": "./assets/logo.png",
->>>>>>> e8f9b1ce8ef080ccd6b3442a3b0fb99611f5fae2
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
