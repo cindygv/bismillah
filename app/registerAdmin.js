@@ -1,16 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
-  Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
-  ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
-  ButtonIcon, Center, View, Alert, Modal,
+  Heading,
+  FormControl,
+  VStack,
+  Text,
+  Input,
+  InputField,
+  InputSlot,
+  InputIcon,
+  Button,
+  ButtonText,
+  Box,
+  Alert,
   ModalBackdrop,
   AlertText,
+  EyeIcon, EyeOffIcon,
+  AlertDialog,
+  AlertDialogBackdrop,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogBody,
+  ButtonGroup,
 } from "@gluestack-ui/themed";
 import Separator from "../components/separator";
-import { registerAdmin } from "../actions/AuthAction"
-import { useNavigation } from '@react-navigation/native';
-
-
+import { registerUser } from "../actions/AuthAction";
+import { useNavigation } from "@react-navigation/native";
 
 const register = () => {
   const navigation = useNavigation();
@@ -115,10 +130,40 @@ const register = () => {
 
           </VStack>
           <Separator height={10} />
-          <Button onPress={() => {
-            onRegisterAdmin();
-          }}
-          ><Text color="white">Register</Text></Button>
+          <Button onPress={() => {onRegisterAdmin(); setShowAlertDialog(true);}}>
+            <ButtonText color="#ffffff">Register</ButtonText>
+          </Button>
+          <AlertDialog
+            isOpen={showAlertDialog}
+            onClose={() => {
+              setShowAlertDialog(false)
+            }}
+          >
+            <AlertDialogBackdrop />
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <Heading size="lg">Data tidak lengkap</Heading>
+              </AlertDialogHeader>
+              <AlertDialogBody>
+                <Text size="sm">
+                  Wah data yang kamu isi, belum lengkap! 
+                </Text>
+              </AlertDialogBody>
+              <AlertDialogFooter>
+                <ButtonGroup space="lg">
+                  <Button
+                    variant="outline"
+                    action="secondary"
+                    onPress={() => {
+                      setShowAlertDialog(false)
+                    }}
+                  >
+                    <ButtonText>OK!</ButtonText>
+                  </Button>
+                </ButtonGroup>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </FormControl>
       </Box>
     </>

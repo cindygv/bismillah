@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
-  Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
+  Heading, FormControl, FormControlHelper, FormControlHelperText, FormControlLabel, FormControlLabelText, VStack, Text, Input, InputField, InputSlot, InputIcon,
   ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
   ButtonIcon, Center, View
 } from "@gluestack-ui/themed";
@@ -46,7 +46,7 @@ const Login = () => {
 
   const navigation = useNavigation();
   const Register = () => {
-    navigation.navigate("admin/halamanAdmin");
+    navigation.navigate("admin/registerAdmin");
   };
   return (
     <>
@@ -74,18 +74,29 @@ const Login = () => {
               </Heading>
             </Center>
             <VStack space="xs">
-              <Text color="$text500" lineHeight="$xs">
-                Email
-              </Text>
-              <Input>
-                <InputField type="text" onChangeText={(text) => setEmail(text)} // Set email ke dalam state
-                  value={email} />
-              </Input>
+              <FormControl minWidth="$80" isRequired={true}>
+                <FormControlLabel>
+                  <FormControlLabelText>Email</FormControlLabelText>
+                </FormControlLabel>
+                <Input>
+                  <InputField 
+                    type="text" 
+                    onChangeText={(text) => setEmail(text)} // Set email ke dalam state
+                    value={email} 
+                  />
+                </Input>
+                <FormControlHelper>
+                  <FormControlHelperText>
+                    Biarkan kami mengenalmu
+                  </FormControlHelperText>
+                </FormControlHelper>
+              </FormControl>
             </VStack>
             <VStack space="xs">
-              <Text color="$text500" lineHeight="$xs">
-                Password
-              </Text>
+            <FormControl minWidth="$80" isRequired={true}>
+                <FormControlLabel>
+                  <FormControlLabelText>Password</FormControlLabelText>
+                </FormControlLabel>
               <Input textAlign="center">
                 <InputField type={showPassword ? "text" : "password"} onChangeText={(text) => setPassword(text)} // Set password ke dalam state
                   value={password}
@@ -97,6 +108,12 @@ const Login = () => {
                   />
                 </InputSlot>
               </Input>
+              <FormControlHelper>
+                  <FormControlHelperText>
+                    Buatlah minimal 6 karakter
+                  </FormControlHelperText>
+                </FormControlHelper>
+              </FormControl>
             </VStack>
 
             <Button onPress={() => login()} action="negative">

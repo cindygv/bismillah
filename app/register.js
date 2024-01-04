@@ -1,18 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
-  Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
-  ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
-  ButtonIcon, Center, View, Alert, Modal,
+  Heading,
+  FormControl,
+  VStack,
+  Text,
+  Input,
+  InputField,
+  InputSlot,
+  InputIcon,
+  Button,
+  ButtonText,
+  Box,
+  Alert,
   ModalBackdrop,
   AlertText,
+  EyeIcon, EyeOffIcon,
+  AlertDialog,
+  AlertDialogBackdrop,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogBody,
+  ButtonGroup,
 } from "@gluestack-ui/themed";
 import Separator from "../components/separator";
-import { registerUser } from "../actions/AuthAction"
-import { useNavigation } from '@react-navigation/native';
+import { registerUser } from "../actions/AuthAction";
+import { useNavigation } from "@react-navigation/native";
 
-
-
-const register = () => {
+const Register = () => {
   const navigation = useNavigation();
   const [nama, setNama] = useState("");
   const [email, setEmail] = useState("");
@@ -22,11 +37,12 @@ const register = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
   const handleState = () => {
     setShowPassword((showState) => {
-      return !showState
-    })
-  }
+      return !showState;
+    });
+  };
 
   const toggleAlert = (message) => {
     setShowAlert(!showAlert);
@@ -55,16 +71,19 @@ const register = () => {
       }
     } else {
       console.log("Error", "Data tidak lengkap");
-      toggleAlert("Data tidak lengkap");
+      toggleAlert("");
     }
   };
+
+  const [showAlertDialog, setShowAlertDialog] = React.useState(false)
 
   return (
     <>
       <Box
         flex={1}
         alignContent="$center"
-        justifyContent="$center">
+        justifyContent="$center"
+      >
         <FormControl
           p="$4"
           borderWidth="$1"
@@ -79,11 +98,9 @@ const register = () => {
           }}
         >
           <VStack space="xl">
-            <Center>
-              <Heading color="#010203" lineHeight="$md" mb="$12">
-                Register
-              </Heading>
-            </Center>
+            <Heading color="#010203" lineHeight="$md" mb="$12">
+              Register
+            </Heading>
             <VStack space="xs">
               <Text color="#010203" lineHeight="$xs">
                 Nama:
@@ -132,17 +149,51 @@ const register = () => {
                 </InputSlot>
               </Input>
             </VStack>
-
           </VStack>
           <Separator height={10} />
-          <Button onPress={() => {
-            onRegister();
-          }}
-          ><Text color="white">Register</Text></Button>
+          <Button onPress={() => { onRegister(); setShowAlertDialog(true); }}>
+            <ButtonText color="#ffffff">Register</ButtonText>
+          </Button>
+
+          <AlertDialog
+            isOpen={showAlertDialog}
+            onClose={() => {
+              setShowAlertDialog(false)
+            }}
+          >
+            <AlertDialogBackdrop />
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <Heading size="lg">Data tidak lengkap</Heading>
+              </AlertDialogHeader>
+              <AlertDialogBody>
+                <Text size="sm">
+                  Wah data yang kamu isi, belum lengkap! 
+                </Text>
+              </AlertDialogBody>
+              <AlertDialogFooter>
+                <ButtonGroup space="lg">
+                  <Button
+                    variant="outline"
+                    action="secondary"
+                    onPress={() => {
+                      setShowAlertDialog(false)
+                    }}
+                  >
+                    <ButtonText>OK!</ButtonText>
+                  </Button>
+                </ButtonGroup>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </FormControl>
       </Box>
+      <Alert isOpen={showAlert} onClose={() => setShowAlert(false)}>
+        <ModalBackdrop />
+        <AlertText>{alertMessage}</AlertText>
+      </Alert>
     </>
   );
 };
 
-export default register;
+export default Register;
