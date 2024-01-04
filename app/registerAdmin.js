@@ -11,6 +11,7 @@ import {
   Button,
   ButtonText,
   Box,
+  Center,
   Alert,
   ModalBackdrop,
   AlertText,
@@ -69,6 +70,8 @@ const register = () => {
       toggleAlert("Data tidak lengkap");
     }
   };
+
+  const [showAlertDialog, setShowAlertDialog] = React.useState(false)
 
   return (
     <>
@@ -146,7 +149,7 @@ const register = () => {
               </AlertDialogHeader>
               <AlertDialogBody>
                 <Text size="sm">
-                  Wah data yang kamu isi, belum lengkap! 
+                  Isi data diri mu dengan lengkap min! 
                 </Text>
               </AlertDialogBody>
               <AlertDialogFooter>

@@ -168,7 +168,7 @@ const Register = () => {
               </AlertDialogHeader>
               <AlertDialogBody>
                 <Text size="sm">
-                  Wah data yang kamu isi, belum lengkap! 
+                  Tel-Utizen! Isi data dirimu dengan lengkap ya! 
                 </Text>
               </AlertDialogBody>
               <AlertDialogFooter>

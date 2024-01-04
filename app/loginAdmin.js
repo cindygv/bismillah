@@ -46,7 +46,7 @@ const Login = () => {
 
   const navigation = useNavigation();
   const Register = () => {
-    navigation.navigate("admin/registerAdmin");
+    navigation.navigate("registerAdmin");
   };
   return (
     <>
