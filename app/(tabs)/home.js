@@ -71,6 +71,7 @@ const Home = () => {
                     </Box>
                 </Pressable>
             </Box>
+            
         );
     };
 
