@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import {
   Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
   ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
-  ButtonIcon, Center, View
+  ButtonIcon, Center, View, Image,
 } from "@gluestack-ui/themed";
 import Separator from "../components/separator";
 import { useNavigation, Link } from "expo-router";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { loginUser } from "../actions/AuthAction"
 
 
@@ -67,26 +66,41 @@ const Login = () => {
             },
           }}
         >
+          <Box alignItems="center"  >
+        <Image role="img" alt="hello" w={80} h={80} mb={10} source={require('../assets/logotelport.png')} />
+      </Box>
+
           <VStack space="xl">
             <Center>
-              <Heading color="$text900" lineHeight="$md">
+              <Heading color="$text900" lineHeight="$2xl">
                 Login User
               </Heading>
             </Center>
-            <VStack space="xs">
-              <Text color="$text500" lineHeight="$xs">
+            <VStack>
+              <Text color="$text900" lineHeight="$lg">
                 Email
               </Text>
-              <Input>
-                <InputField type="text" onChangeText={(text) => setEmail(text)} // Set email ke dalam state
-                  value={email} />
-              </Input>
+              <Input
+                  alignSelf="auto"
+                  marginTop={10}
+                  borderWidth={1}
+                  backgroundColor="#EEEDED"
+                  rounded={10}
+                  w={"100%"}
+                  onChangeText={(text) => setFullName(text)}>
+                  <InputField placeholder="Masukkan Email kamu" />
+                </Input>
             </VStack>
             <VStack space="xs">
               <Text color="$text500" lineHeight="$xs">
                 Password
               </Text>
-              <Input textAlign="center">
+              <Input alignSelf="auto"
+                  marginTop={10}
+                  borderWidth={1}
+                  backgroundColor="#EEEDED"
+                  rounded={10}
+                  w={"100%"}textAlign="center">
                 <InputField type={showPassword ? "text" : "password"} onChangeText={(text) => setPassword(text)} // Set password ke dalam state
                   value={password}
                 />
@@ -105,7 +119,7 @@ const Login = () => {
             <Button onPress={Register} action="negative">
               <Text bold color="white">Register</Text>
             </Button>
-            <Button onPress={() => 
+            <Button  onPress={() => 
             navigation.navigate("loginAdmin")}>
               <Text bold color="white">Login sebagai admin</Text>
             </Button>

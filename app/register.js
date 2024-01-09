@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
   ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
-  ButtonIcon, Center, View, Alert, Modal,
+  ButtonIcon, Center, View, Alert, Modal, Image,
   ModalBackdrop,
   AlertText,
 } from "@gluestack-ui/themed";
@@ -18,6 +18,7 @@ const register = () => {
   const [email, setEmail] = useState("");
   const [nim, setNim] = useState("");
   const [prodi, setProdi] = useState("");
+  const [kegiatan, setKegiatan] = useState("");
   const [password, setPassword] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
@@ -40,6 +41,7 @@ const register = () => {
         nim: nim,
         nama: nama,
         prodi: prodi,
+        kegiatan: kegiatan,
         password: password,
         status: "user",
       };
@@ -48,7 +50,7 @@ const register = () => {
 
       try {
         const user = await registerUser(data, password);
-        navigation.replace("login");
+        navigation.replace("(tabs)");
       } catch (error) {
         console.log("Error", error.message);
         toggleAlert(error.message);
@@ -78,6 +80,9 @@ const register = () => {
             },
           }}
         >
+          <Box alignItems="center"  >
+        <Image role="img" alt="hello" size="lg"  source={require('../assets/logotelport.png')} />
+      </Box>
           <VStack space="xl">
             <Center>
               <Heading color="#010203" lineHeight="$md" mb="$12">
@@ -116,6 +121,14 @@ const register = () => {
               <Input >
                 <InputField type="text" placeholder="Ketikan prodi" value={prodi}
                   onChangeText={(prodi) => setProdi(prodi)} />
+              </Input>
+              <Separator height={10} />
+              <Text color="#010203" lineHeight="$xs">
+                Kegiatan yang pernah diikuti:
+              </Text>
+              <Input >
+                <InputField type="text" placeholder="Kegiatan kampus yang pernah diikuti" value={kegiatan}
+                  onChangeText={(kegiatan) => setKegiatan(kegiatan)} />
               </Input>
               <Separator height={10} />
               <Text color="#010203" lineHeight="$xs">

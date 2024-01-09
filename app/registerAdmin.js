@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
   ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
-  ButtonIcon, Center, View, Alert, Modal,
+  ButtonIcon, Center, View, Alert, Modal, Image,
   ModalBackdrop,
   AlertText,
 } from "@gluestack-ui/themed";
@@ -74,6 +74,9 @@ const register = () => {
             },
           }}
         >
+        <Box alignItems="center"  >
+        <Image role="img" alt="hello" size="lg"  source={require('../assets/logotelport.png')} />
+        </Box>
           <VStack space="xl">
             <Center>
               <Heading color="#010203" lineHeight="$md" mb="$12">

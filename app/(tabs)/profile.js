@@ -85,7 +85,7 @@ const Profile = () => {
               </VStack>
               <VStack marginStart={20} marginTop={25}>
                 <Heading color="white" fontWeight="bold" fontSize={20}>NIM :</Heading>
-                <Text color="white" fontSize={15}>{profile?.nim}</Text>
+                  <Text color="white" fontSize={15}>{profile?.nim}</Text>
               </VStack>
               <VStack marginStart={20} marginTop={25}>
                 <Heading color="white" fontWeight="bold" fontSize={20}>Prodi :</Heading>
@@ -93,7 +93,7 @@ const Profile = () => {
               </VStack>
               <VStack marginStart={20} marginTop={25} paddingBottom={25}>
                 <Heading color="white" fontWeight="bold" fontSize={20}>Riwayat Kegiatan :</Heading>
-                <Text color="white" fontSize={15}>Pernah mengikuti HIMA</Text>
+                <Text color="white" fontSize={15}>{profile?.kegiatan}</Text>
               </VStack>
               <Button onPress={() => onSubmit(profile)} bg="white" mb={10} alignSelf="center" w={"87%"}>
                 <Text>Keluar</Text>
