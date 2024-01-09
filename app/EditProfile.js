@@ -12,10 +12,8 @@ const EditProfile = ({ route }) => {
   
   const navigation = useNavigation();
   const [profile, setProfile] = useState({
-    nama: '',
     email: '',
-    nim: '',
-    prodi: '',
+    password: '',
     kegiatan: '',
   });
 
@@ -48,7 +46,7 @@ const EditProfile = ({ route }) => {
       <ScrollView>
         <Box flex={1} bgColor='#fffff' alignItems='center'>
           <Box flex={1} alignItems="center">
-            <Heading marginTop={30}>Profile saya</Heading>
+          <Heading color="red" fontSize={30} marginTop={20}>{profile?.nama}</Heading>
             <Image role="img" alt="20" width={200} height={200} rounded={50} marginTop={10}
               source={require('../assets/logoprofile.png')} />
           </Box>
@@ -60,34 +58,34 @@ const EditProfile = ({ route }) => {
             <Box marginTop={25} paddingBottom={25}>
               
               <VStack marginTop={20}>
-                <Heading ml={20} color="white" fontWeight="bold">Nama Lengkap :</Heading>
+                <Heading ml={20} color="white" fontWeight="bold">Email :</Heading>
                 <Input
                   alignSelf="center"
                   marginTop={20}
                   borderWidth={0}
-                  placeholder="Ubah Nama Lengkap"
+                  placeholder="Ubah Email terbaru"
                   backgroundColor="#f3f3f3"
                   rounded={10}
                   w={"90%"}
                   onChangeText={(text) => setProfile({ ...profile, nama: text })}
                 >
-                  <InputField placeholder="Ubah Nama Lengkap terbaru" />
+                  <InputField placeholder="Ubah Email terbaru" />
                 </Input>
               </VStack>
 
               <VStack marginTop={20}>
-                <Heading ml={20} color="white" fontWeight="bold" fontSize={20}>NIM :</Heading>
+                <Heading ml={20} color="white" fontWeight="bold" fontSize={20}>Password :</Heading>
                 <Input
                   alignSelf="center"
                   marginTop={20}
                   borderWidth={0}
-                  placeholder="Ubah Nim terbaru"
+                  placeholder="Ubah Password terbaru"
                   backgroundColor="#f3f3f3"
                   rounded={10}
                   w={"90%"}
-                  onChangeText={(text) => setProfile({ ...profile, nim: text })}
+                  onChangeText={(text) => setProfile({ ...profile, password: text })}
                 >
-                  <InputField placeholder="Ubah Nim terbaru" />
+                  <InputField placeholder="Ubah Password terbaru" />
                 </Input>
               </VStack>
 
@@ -106,8 +104,8 @@ const EditProfile = ({ route }) => {
                   <InputField placeholder="Ubah Riwayat Kegiatan terbaru" />
                 </Input>
           
-              <Button alignSelf={"center"} onPress={handleSave} bg={"#38bdf8"} mt={3} w={"90%"} h={40} rounded={10} marginTop={40} >
-                <Heading color={"white"} fontSize={20}>Save</Heading>
+              <Button alignSelf={"center"} onPress={handleSave} bg={"#ffff"} mt={3} w={"90%"} h={50} rounded={10} marginTop={40} >
+                <Heading color={"red"} fontSize={20}>Save</Heading>
               </Button>
               </VStack>
             </Box>

@@ -75,8 +75,8 @@ const register = () => {
           }}
         >
         <Box alignItems="center"  >
-        <Image role="img" alt="hello" size="lg"  source={require('../assets/logotelport.png')} />
-        </Box>
+        <Image role="img" alt="hello" w={80} h={80} mb={10} source={require('../assets/logotelport.png')} />
+      </Box>
           <VStack space="xl">
             <Center>
               <Heading color="#010203" lineHeight="$md" mb="$12">

@@ -69,10 +69,7 @@ const Login = () => {
           <Box alignItems="center"  >
         <Image role="img" alt="hello" w={80} h={80} mb={10} source={require('../assets/logotelport.png')} />
       </Box>
-      <Text color="$text900" lineHeight="$lg">
-                Email
-              </Text>
-
+      <Text color="$text900" lineHeight="$lg"> Email</Text>
       <VStack space="md" marginTop={10}>
               <Input
                 borderBottomWidth={3}
@@ -86,9 +83,7 @@ const Login = () => {
                 <InputField value={email} type="text" placeholder="Masukkan Email" onChangeText={(value) => setEmail(value)} />
               </Input>
             </VStack>
-            <Text color="$text900" lineHeight="$lg">
-                Password
-              </Text>
+            <Text color="$text900" lineHeight="$lg">Password</Text>
             <VStack space="md">
               <Input
                 borderBottomWidth={3}
@@ -123,7 +118,6 @@ const Login = () => {
               <Text bold color="white">Register</Text>
             </Button>
             <HStack alignItems="center" my={3}>
-
               <Divider color="gray" thickness={1} flex={1} />
               <Text color="gray" fontSize={16} px={3}>
                 or
