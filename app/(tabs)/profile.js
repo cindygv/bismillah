@@ -64,7 +64,7 @@ const Profile = () => {
           <Box flex={1} alignItems="center">
             <Heading marginTop={30}>Profile saya</Heading>
             <Image role="img" alt="20" width={200} height={200} rounded={50} marginTop={10}
-              source={require('../../assets/firli2.jpg')} />
+              source={require('../../assets/logoprofile.png')} />
           </Box>
           <Box flex={2} marginTop={20} width={"100%"} borderTopLeftRadius={50} borderTopRightRadius={50} bg="$#800000" >
             <Box borderRadius={10} width={"15%"} height={4} bg="white" alignSelf="center" marginTop={20}></Box>
@@ -96,7 +96,7 @@ const Profile = () => {
                 <Text color="white" fontSize={15}>{profile?.kegiatan}</Text>
               </VStack>
               <Button onPress={() => onSubmit(profile)} bg="white" mb={10} alignSelf="center" w={"87%"}>
-                <Text>Keluar</Text>
+                <Text bold color="red">Keluar</Text>
               </Button>
 
             </Box>

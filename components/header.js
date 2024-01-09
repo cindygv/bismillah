@@ -11,6 +11,14 @@ import { config } from "@gluestack-ui/config";
 const Header = ({ title, withBack = false, withClose = false }) => {
     const trueGray900 = "#800000";
     const navigation = useNavigation();
+    const Notifications = () => {
+        navigation.navigate("notifikasi");
+    };
+    const Login = () => {
+        navigation.navigate("login");
+    };
+
+
     return (
         <SafeAreaView>
             <StatusBar barStyle="light" backgroundColor={trueGray900} />
@@ -42,11 +50,14 @@ const Header = ({ title, withBack = false, withClose = false }) => {
                     </HStack>
                     <HStack space={"2xl"} alignItems="center">
                         <TouchableOpacity>
-                        <Link href="/login">
-                        <Box style={{ alignItems: 'center' }}>
-                            <Text size={20} color="white">Login</Text>
-                        </Box>
-                        </Link>
+                            <HStack>
+                                <TouchableOpacity onPress={Notifications}>
+                                    <Ionicons name="notifications" size={32} color="white" />
+                                </TouchableOpacity>
+                                {/* <TouchableOpacity onPress={Login}>
+                                    <Ionicons name="person" size={32} color="white" />
+                                </TouchableOpacity> */}
+                            </HStack>
                         </TouchableOpacity>
                     </HStack>
                 </HStack>
