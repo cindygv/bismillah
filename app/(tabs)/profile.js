@@ -1,12 +1,56 @@
+import React, { useState, useEffect } from "react";
 import { Heading, Box, Text, Pressable, VStack, ScrollView, Button, HStack } from "@gluestack-ui/themed";
 import { useNavigation } from "@react-navigation/native";
 import { Image } from "@gluestack-ui/themed"
 import { Link } from 'expo-router';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Header } from "../../components";
+import { clearStorage, getData } from "../../utils";
+import FIREBASE from "../../config/FIREBASE";
 
 const Profile = () => {
   const navigation = useNavigation();
+  const [profile, setProfile] = useState(null);
+  const getUserData = () => {
+    getData("user").then((res) => {
+      const data = res;
+      if (data) {
+        console.log("isi data", data);
+        setProfile(data);
+      } else {
+        // navigation.replace('Login');
+      }
+    });
+  };
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("focus", () => {
+      getUserData();
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [navigation]);
+
+  const onSubmit = (profile) => {
+    if (profile) {
+      FIREBASE.auth()
+        .signOut()
+        .then(() => {
+          // Sign-out successful.
+          clearStorage();
+          navigation.replace("login");
+        })
+        .catch((error) => {
+          // An error happened.
+          alert(error);
+        });
+    } else {
+      navigation.replace("Login");
+    }
+  };
+
 
   const EditProfile = () => {
     navigation.navigate("EditProfile");
@@ -33,33 +77,28 @@ const Profile = () => {
             <Box marginTop={-20} >
               <VStack marginStart={20} >
                 <Heading color="white" fontWeight="bold">Nama Lengkap :</Heading>
-                <Text color="white" fontSize={15}>Arda Allan Firli Cindy Tegar</Text>
+                <Text color="white" fontSize={15}>{profile?.nama}</Text>
+              </VStack>
+              <VStack marginStart={20} marginTop={25}>
+                <Heading color="white" fontWeight="bold">Email saya :</Heading>
+                <Text color="white" fontSize={15}>{profile?.email}</Text>
               </VStack>
               <VStack marginStart={20} marginTop={25}>
                 <Heading color="white" fontWeight="bold" fontSize={20}>NIM :</Heading>
-                <Text color="white" fontSize={15}>1204212001</Text>
+                <Text color="white" fontSize={15}>{profile?.nim}</Text>
               </VStack>
               <VStack marginStart={20} marginTop={25}>
-                <Heading color="white" fontWeight="bold" fontSize={20}>Angkatan :</Heading>
-                <Text color="white" fontSize={15}>2021</Text>
+                <Heading color="white" fontWeight="bold" fontSize={20}>Prodi :</Heading>
+                <Text color="white" fontSize={15}>{profile?.prodi}</Text>
               </VStack>
-              <VStack marginStart={20} marginTop={25}>
-              <Heading color="white" fontWeight="bold" fontSize={20}>Prodi :</Heading>
-                <Text color="white" fontSize={15}>Sistem Informasi</Text>
-              </VStack>
-              <VStack marginStart={20} marginTop={25}>
-              <Heading color="white" fontWeight="bold" fontSize={20}>No Telepon:</Heading>
-                <Text color="white" fontSize={15}>0812123456789</Text>
-              </VStack>
-              <VStack marginStart={20} marginTop={25}>
-              <Heading color="white" fontWeight="bold" fontSize={20}>Asal Kota :</Heading>
-                <Text color="white" fontSize={15}>Surabaya</Text>
-              </VStack>
-
               <VStack marginStart={20} marginTop={25} paddingBottom={25}>
-              <Heading color="white" fontWeight="bold" fontSize={20}>Riwayat Kegiatan :</Heading>
+                <Heading color="white" fontWeight="bold" fontSize={20}>Riwayat Kegiatan :</Heading>
                 <Text color="white" fontSize={15}>Pernah mengikuti HIMA</Text>
               </VStack>
+              <Button onPress={() => onSubmit(profile)} bg="white" mb={10} alignSelf="center" w={"87%"}>
+                <Text>Keluar</Text>
+              </Button>
+
             </Box>
           </Box>
         </Box>

@@ -7,7 +7,7 @@ import {
   AlertText,
 } from "@gluestack-ui/themed";
 import Separator from "../components/separator";
-import { registerUser } from "../actions/AuthAction"
+import { registerAdmin } from "../actions/AuthAction"
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -16,8 +16,6 @@ const register = () => {
   const navigation = useNavigation();
   const [nama, setNama] = useState("");
   const [email, setEmail] = useState("");
-  const [nim, setNim] = useState("");
-  const [prodi, setProdi] = useState("");
   const [password, setPassword] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
@@ -33,22 +31,20 @@ const register = () => {
     setAlertMessage(message);
   };
 
-  const onRegister = async () => {
-    if (email && nim && nama && prodi && password) {
+  const onRegisterAdmin = async () => {
+    if (email && nama && password) {
       const data = {
         email: email,
-        nim: nim,
         nama: nama,
-        prodi: prodi,
         password: password,
-        status: "user",
+        status: "admin",
       };
 
       console.log(data);
 
       try {
-        const user = await registerUser(data, password);
-        navigation.replace("login");
+        const admin = await registerAdmin(data, password);
+        navigation.replace("loginAdmin");
       } catch (error) {
         console.log("Error", error.message);
         toggleAlert(error.message);
@@ -81,7 +77,7 @@ const register = () => {
           <VStack space="xl">
             <Center>
               <Heading color="#010203" lineHeight="$md" mb="$12">
-                Register
+                Register admin
               </Heading>
             </Center>
             <VStack space="xs">
@@ -95,27 +91,11 @@ const register = () => {
             </VStack>
             <VStack space="xs">
               <Text color="#010203" lineHeight="$xs">
-                Nim:
-              </Text>
-              <Input textAlign="center" >
-                <InputField type="text" placeholder="Ketikan nim" value={nim}
-                  onChangeText={(nim) => setNim(nim)} />
-              </Input>
-              <Separator height={10} />
-              <Text color="#010203" lineHeight="$xs">
                 Email:
               </Text>
               <Input >
                 <InputField type="text" placeholder="Ketikan email" value={email}
                   onChangeText={(email) => setEmail(email)} />
-              </Input>
-              <Separator height={10} />
-              <Text color="#010203" lineHeight="$xs">
-                Prodi:
-              </Text>
-              <Input >
-                <InputField type="text" placeholder="Ketikan prodi" value={prodi}
-                  onChangeText={(prodi) => setProdi(prodi)} />
               </Input>
               <Separator height={10} />
               <Text color="#010203" lineHeight="$xs">
@@ -136,7 +116,7 @@ const register = () => {
           </VStack>
           <Separator height={10} />
           <Button onPress={() => {
-            onRegister();
+            onRegisterAdmin();
           }}
           ><Text color="white">Register</Text></Button>
         </FormControl>

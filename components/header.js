@@ -4,7 +4,6 @@ import { StatusBar } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import { useNavigation, Link } from "expo-router";
-
 import { Stack } from "expo-router";
 import { GluestackUIProvider } from "@gluestack-ui/themed";
 import { config } from "@gluestack-ui/config";
@@ -12,10 +11,6 @@ import { config } from "@gluestack-ui/config";
 const Header = ({ title, withBack = false, withClose = false }) => {
     const trueGray900 = "#800000";
     const navigation = useNavigation();
-    const Notifications = () => {
-        navigation.navigate("notifikasi");
-      };
-    
     return (
         <SafeAreaView>
             <StatusBar barStyle="light" backgroundColor={trueGray900} />
@@ -47,9 +42,11 @@ const Header = ({ title, withBack = false, withClose = false }) => {
                     </HStack>
                     <HStack space={"2xl"} alignItems="center">
                         <TouchableOpacity>
-                            <TouchableOpacity onPress={Notifications}>
-                                <Ionicons name="notifications" size={32} color="white" />
-                            </TouchableOpacity>
+                        <Link href="/login">
+                        <Box style={{ alignItems: 'center' }}>
+                            <Text size={20} color="white">Login</Text>
+                        </Box>
+                        </Link>
                         </TouchableOpacity>
                     </HStack>
                 </HStack>

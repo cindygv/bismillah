@@ -11,6 +11,9 @@ const TabsLayout = () => {
                 tabBarIcon: ({ focused, color }) => {
                     let iconName;
                     switch (route.name) {
+                        case "login":
+                            iconName = "home-outline";
+                            break;
                         case "home":
                             iconName = "home-outline";
                             break;
