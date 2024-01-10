@@ -1,15 +1,15 @@
 import { Box, ClockIcon, GlobeIcon, GripVerticalIcon, HStack, Image, Icon, ScrollView, Heading, LinkIcon, PhoneIcon, Text, VStack, Link, LinkText, } from "@gluestack-ui/themed";
-import { Header } from "../components";
+import { AdminHeader } from "../components";
 import { useRoute } from '@react-navigation/native';
 import { Linking } from 'react-native';
 
 
-const INFO = () => {
+const AdminDetailPoster = () => {
     const route = useRoute();
     const { poster } = route.params;
     return (
         <>
-            <Header title={"DETAIL POSTER"} withBack />
+            <AdminHeader title={"DETAIL POSTER"} withBack />
             <ScrollView>
                 <Box padding={10} borderBottomWidth={0.5}>
                     <Image height={500} width={500}
@@ -63,4 +63,4 @@ const INFO = () => {
     )
 }
 
-export default INFO
+export default AdminDetailPoster
