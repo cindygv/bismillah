@@ -46,7 +46,7 @@ const Ukm = () => {
                         <Link href="/ukki">
                         <View style={{ alignItems: 'center' }}>
                             <Image
-                            source={require('../assets/logobem.png')} // Gantilah dengan path gambar Anda
+                            alt={"UKKI"}  source={require('../assets/logobem.png')} // Gantilah dengan path gambar Anda
                             style={{ width: 75, height: 75, resizeMode: 'contain' }}
                             />
                             <Heading mb="$1">UKKI</Heading>

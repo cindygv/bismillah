@@ -1,37 +1,52 @@
-import { StyleSheet, View } from 'react-native';
 import React, { useEffect } from 'react';
-import { getData } from '../utils/localStorage';
+import { Box, Image } from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { getData } from '../utils/localStorage';
 
-export default function Splash() {
+const Splash = () => {
     const navigation = useNavigation();
-
     useEffect(() => {
-        const fetchData = async () => {
-            const userData = await getData("user");
-            if (userData) {
-                navigation.replace('(tabs)');
-            } else {
-                navigation.navigate('login');
+        const checkUserStatus = async () => {
+            try {
+                const userData = await getData('user');
+                if (userData) {
+                    // Jika user data ada, periksa status admin
+                    const isAdmin = userData.status === 'admin';
+
+                    if (isAdmin) {
+                        navigation.replace('(AdminTabs)');
+                    } else {
+                        navigation.replace('(tabs)');
+                    }
+                } else {
+                    navigation.replace('login');
+                }
+            } catch (error) {
+                console.error('Error checking user status:', error);
+                navigation.replace('login');
             }
         };
 
-        const timer = setTimeout(fetchData, 3000);
-
-        return () => clearTimeout(timer); // Clear the timeout if the component unmounts
-    }, [navigation]); // Make sure to include navigation in the dependency array
+        // Periksa status user saat komponen di-mount
+        checkUserStatus();
+    }, [navigation]);
 
     return (
-        <View style={styles.pages}>
-            {/* Your component content */}
-        </View>
+        <Box flex={1} justifyContent="center" alignItems="center" backgroundColor="white">
+            <Box width="100%" height={250}>
+                <Image
+                    role='img'
+                    alt='gambar'
+                    resizeMode='contain'
+                    flex={1}
+                    width={'100%'}
+                    height={'100%'}
+                    source={require('../assets/logotelport.png')}
+                />
+            </Box>
+        </Box>
     );
-}
+};
 
-const styles = StyleSheet.create({
-    pages: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
-});
+export default Splash;

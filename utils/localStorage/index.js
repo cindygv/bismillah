@@ -1,5 +1,6 @@
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import FIREBASE from '../../config/FIREBASE';
 
 export const storeData = async (key, value) => {
   try {
@@ -9,17 +10,41 @@ export const storeData = async (key, value) => {
   }
 };
 
+// export const getData = async (key) => {
+//   try {
+//     const value = await AsyncStorage.getItem(key);
+//     if (value !== null) {
+//       // value previously stored
+//       return JSON.parse(value)
+//     }else{
+//       return 0;
+//     }
+//   } catch (e) {
+//     // error reading value
+//   }
+// };
+
 export const getData = async (key) => {
   try {
-    const value = await AsyncStorage.getItem(key);
-    if (value !== null) {
-      // value previously stored
-      return JSON.parse(value)
-    }else{
-      return 0;
+    // Attempt to get data from AsyncStorage
+    const localData = await AsyncStorage.getItem(key);
+
+    if (localData !== null) {
+      // If data is available locally, return it
+      return JSON.parse(localData);
+    } else {
+      // If data is not available locally, fetch it from Firebase
+      const snapshot = await FIREBASE.database().ref(`users/${key}`).once('value');
+      const data = snapshot.val();
+
+      // Save the data to AsyncStorage for future use
+      await storeData(key, data);
+
+      return data;
     }
-  } catch (e) {
-    // error reading value
+  } catch (error) {
+    console.error('Error getting data:', error);
+    throw error;
   }
 };
 
