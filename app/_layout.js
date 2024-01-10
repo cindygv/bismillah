@@ -11,6 +11,7 @@ const StackLayout = () => {
 
                 <Stack initialRouteName="splash">
                     <Stack.Screen name="(tabs)" options={noHead} />
+                    <Stack.Screen name="(AdminTabs)" options={noHead} />
                     <Stack.Screen name="kepanitiaan" options={noHead} />
                     <Stack.Screen name="lomba" options={noHead} />
                     <Stack.Screen name="ormawa" options={noHead} />
@@ -28,7 +29,9 @@ const StackLayout = () => {
                     <Stack.Screen name="splash" options={noHead} />
                     <Stack.Screen name="loginAdmin" options={noHead} />
                     <Stack.Screen name="registerAdmin" options={noHead} />
-                    <Stack.Screen name="halamanAdmin" options={noHead} />
+                    <Stack.Screen name="infoposter" options={noHead} />
+                    <Stack.Screen name="AdminEdit" options={noHead} />
+                    <Stack.Screen name="AdminDetailPoster" options={noHead} />
                 </Stack>
             
         </GluestackUIProvider>

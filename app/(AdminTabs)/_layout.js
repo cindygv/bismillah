@@ -11,17 +11,11 @@ const TabsLayout = () => {
                 tabBarIcon: ({ focused, color }) => {
                     let iconName;
                     switch (route.name) {
-                        case "login":
+                        case "AdminHome":
                             iconName = "home-outline";
                             break;
-                        case "home":
-                            iconName = "home-outline";
-                            break;
-                        case "kategori":
-                            iconName = "apps-outline";
-                            break;
-                        case "profile":
-                            iconName = "person-circle-outline";
+                        case "AdminAdd":
+                            iconName = "add-circle-outline";
                             break;
                     }
                     return (
@@ -45,10 +39,8 @@ const TabsLayout = () => {
                 },
             })}
         >
-            <Tabs.Screen name="home" options={{ title: "Home", ...noHead }} />
-            <Tabs.Screen name="kategori" options={{ title: "Kategori", ...noHead }} />
-            <Tabs.Screen name="profile" options={{ title: "Profile", ...noHead }} />
-            <Tabs.Screen name="login" options={{ title: "Login", ...noHead }} />
+            <Tabs.Screen name="AdminHome" options={{ title: "AdminHome", ...noHead }} />
+            <Tabs.Screen name="AdminAdd" options={{ title: "AdminAdd", ...noHead }} />
             
         </Tabs>
     );
