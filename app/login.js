@@ -118,7 +118,7 @@ const Login = () => {
             borderStartWidth={2}
             rounded={7}
             borderColor='#000000'>
-            <Text bold color="white">Login</Text>
+            <Text bold color="#FFFFFF">Login</Text>
           </Button>
           <HStack alignItems="center" my={10}>
             <Divider color="gray" thickness={1} flex={1} />
@@ -133,7 +133,7 @@ const Login = () => {
             borderStartWidth={2}
             rounded={7}
             borderColor='#000000'>
-            <Text bold color="white">Register</Text>
+            <Text bold color="#FFFFFF">Register</Text>
           </Button>
           <Separator height={10} />
         </FormControl>
