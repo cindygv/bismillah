@@ -33,34 +33,31 @@ const INFO = () => {
                 <Box padding={10} borderBottomWidth={0.5}>
                     <HStack>
                         <Icon as={PhoneIcon} m="$2" w="$4" h="$4" />
-                        <Link href={`whatsapp://send?text=Hallo%20saya%20mau%20mendaftar!&phone=${encodeURIComponent(poster.contact)}`}>
+                        <Link href="whatsapp://send?text=Hallo saya mau mendaftar!&phone=+6282233894722">
                             <LinkText padding={5}>{poster.contact}</LinkText>
                         </Link>
                     </HStack>
                 </Box>
                 <Box padding={10} borderBottomWidth={0.5}>
                     <HStack>
-                        <Icon as={LinkIcon} m="$2" w="$4" h="$4"></Icon>
-                        <Link href={poster.link}>
+                        <Icon as={LinkIcon} m="$2" w="$4" h="$4" />
+                        <Link href="bit.ly/PKKMB2024">
                             <LinkText padding={5} onPress={() => Linking.openURL(poster.link)}>
                                 {poster.link}
                             </LinkText>
                         </Link>
                     </HStack>
                 </Box>
-
                 <Box padding={10} borderBottomWidth={0.5}>
                     <HStack>
                         <Icon as={GlobeIcon} m="$2" w="$4" h="$4"></Icon>
-                        <Link href={`https://www.instagram.com/${poster.socialmedia}`}>
-                            <LinkText padding={5} onPress={() => Linking.openURL(`https://www.instagram.com/${poster.socialmedia}`)}>
-                                {poster.socialmedia}
+                        <Link href="https://www.instagram.com/dewangkara.maetala/">
+                            <LinkText padding={5} onPress={() => Linking.openURL(poster.socialmedia)}>
+                                {poster.link}
                             </LinkText>
                         </Link>
                     </HStack>
                 </Box>
- 
-
             </ScrollView>
         </>
     )
