@@ -1,37 +1,48 @@
-import { StyleSheet, View } from 'react-native';
 import React, { useEffect } from 'react';
-import { getData } from '../utils/localStorage';
+import { Box, Image } from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function Splash() {
+const Splash = () => {
     const navigation = useNavigation();
 
     useEffect(() => {
-        const fetchData = async () => {
-            const userData = await getData("user");
+        const timeout = setTimeout(async () => {
+            getUser();
+        }, 2000);
+
+        return () => clearTimeout(timeout);
+
+    }, []);
+
+    const getUser = async () => {
+        try {
+            const userData = await AsyncStorage.getItem("user");
             if (userData) {
                 navigation.replace('(tabs)');
             } else {
-                navigation.navigate('login');
+                navigation.replace('login');
             }
-        };
-
-        const timer = setTimeout(fetchData, 3000);
-
-        return () => clearTimeout(timer); // Clear the timeout if the component unmounts
-    }, [navigation]); // Make sure to include navigation in the dependency array
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
     return (
-        <View style={styles.pages}>
-            {/* Your component content */}
-        </View>
+        <Box flex={1} justifyContent="center" alignItems="center" backgroundColor="white">
+            <Box width="100%" height={250}>
+                <Image
+                    role='img'
+                    alt='gambar'
+                    resizeMode='contain'
+                    flex={1}
+                    width={'100%'}
+                    height={'100%'}
+                    source={require('../assets/logotelport.png')}
+                />
+            </Box>
+        </Box>
     );
-}
+};
 
-const styles = StyleSheet.create({
-    pages: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
-});
+export default Splash;

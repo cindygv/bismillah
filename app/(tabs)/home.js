@@ -1,55 +1,114 @@
 import {
     FlatList,
-    StyleSheet,
 } from "react-native";
-import { Box, Image, Text, Center, Heading, Pressable, HStack } from "@gluestack-ui/themed";
+import React, { useState } from "react";
+import {
+    Box,
+    Image,
+    Text,
+    Pressable,
+    Modal,
+    ModalBackdrop,
+    ModalContent,
+    ModalHeader,
+    Heading,
+    ModalCloseButton,
+    Icon,
+    CloseIcon,
+    ModalBody,
+    ModalFooter,
+    Button,
+    ButtonText,
+} from "@gluestack-ui/themed";
 import { Header } from "../../components";
+import { Link } from "expo-router";
 
-// Dummmy Data (Array of Object)
 const datas = [
     {
         id: 1,
-        title:
-            "Open Recruitment Panitia PKKMB ITTelkom Surabaya",
-        image:
-            "https://pbs.twimg.com/media/E8ZqppRVkAMliJY?format=jpg&name=large",
-        alt: "gambar"
+        link: "/infoposter",
+        title: "Lomba Diesnatalis ITTelkom Surabaya",
+        image: "https://pbs.twimg.com/media/EeyfwHDX0AArN5t.jpg",
     },
     {
         id: 2,
-        title: "Lomba Diesnatalis ITTelkom Surabaya",
+        link: "/infoposter",
+        title: "Program Pelatihan ITTelkom Surabaya",
         image:
-            "https://pbs.twimg.com/media/EeyfwHDX0AArN5t.jpg",
-        alt: "gambar"
+            "https://ppm.ittelkom-sby.ac.id/wp-content/uploads/2023/06/ITTS-Academy-2023.jpg",
     },
     {
         id: 3,
-        title:
-            "Program Pelatihan ITTelkom Surabaya",
-        image:
-            "https://ppm.ittelkom-sby.ac.id/wp-content/uploads/2023/06/ITTS-Academy-2023.jpg",
-        alt: "gambar"
-    },
-    {
-        id: 4,
+        link: "/infoposter",
         title: "Lomba Essay ITTelkom Surabaya",
         image:
             "https://1.bp.blogspot.com/-DeuF2gMjopM/YC9Du_ijhuI/AAAAAAAAXEU/41Tw_SIrQLIVrfh2-QTBkvrIvDoFxHcaQCLcBGAsYHQ/s600/1.png",
-        alt: "gambar"
     },
 ];
 
-// Functional Component
-const List = () => {
-    // Arrow Function with destructured argument
+const Home = () => {
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+
     const renderItem = ({ item }) => {
         return (
-            <Pressable padding={10} borderBottomColor="#800000" borderBottomWidth={10} onPress={() => alert("Pressed")}>
-                <Box>
-                    <Image source={{ uri: item.image }} style={styles.image} alt="gambar" />
-                    <Text style={styles.text}>{item.title}</Text>
-                </Box>
-            </Pressable>
+            <Box>
+                <Pressable
+                    alignItems="center"
+                    padding={10}
+                    borderBottomColor="#800000"
+                    borderBottomWidth={10}
+                    onPress={() => {
+                        setSelectedItem(item);
+                        setShowModal(true);
+                    }}
+                >
+                    <Box>
+                        <Image source={{ uri: item.image }} alt="home" height={500} width={300} />
+                        <Text fontSize={16} paddingTop={10}>
+                            {item.title}
+                        </Text>
+                    </Box>
+                </Pressable>
+            </Box>
+            
+        );
+    };
+
+    const ModalComponent = ({ selectedItem, onClose }) => {
+        return (
+            <Modal isOpen={showModal} onClose={onClose}>
+                <ModalBackdrop />
+                <ModalContent>
+                    <ModalHeader>
+                        <Heading size="lg">{selectedItem.title}</Heading>
+                        <ModalCloseButton onPress={onClose}>
+                            <Icon as={CloseIcon} />
+                        </ModalCloseButton>
+                    </ModalHeader>
+                    <ModalBody>
+                        <Image source={{ uri: selectedItem.image }} alt="home" height={500} width={300} />
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            action="secondary"
+                            mr="$3"
+                            onPress={onClose}
+                        >
+                            <ButtonText>Cancel</ButtonText>
+                        </Button>
+
+                        <Button size="sm" action="positive" borderWidth="$0" >
+                            <Link href={selectedItem.link}>
+                                <ButtonText>Go</ButtonText>
+                            </Link>
+                        </Button>
+
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         );
     };
 
@@ -59,22 +118,13 @@ const List = () => {
             <FlatList
                 data={datas}
                 renderItem={renderItem}
-                keyExtractor={(item) => item.id}
+                keyExtractor={(item) => item.id.toString()}
             />
+            {selectedItem && (
+                <ModalComponent selectedItem={selectedItem} onClose={() => setShowModal(false)} />
+            )}
         </Box>
     );
 };
 
-// Styles
-const styles = StyleSheet.create({
-    image: {
-        height: 600,
-        width: null,
-    },
-    text: {
-        fontSize: 18,
-        paddingTop: 10,
-    },
-});
-
-export default List;
+export default Home;

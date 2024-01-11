@@ -1,21 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { Heading, Box, Text, Pressable, VStack, ScrollView, Button, HStack, Input, InputField } from "@gluestack-ui/themed";
-import { useNavigation } from "@react-navigation/native";
+import { Alert } from 'react-native'; 
+import { Heading, Box, Text, Pressable, VStack, ScrollView, Button, HStack, Input, InputField, TouchableOpacity, } from "@gluestack-ui/themed";
 import { Image } from "@gluestack-ui/themed"
-import { Link } from 'expo-router';
+import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { getData, storeData } from '../utils/localStorage';
 import { Header } from "../components";
+import Separator from "../components/separator";
 
-const EditProfile = () => {
-  const [fullName, setFullName] = useState("Arda Allan Firli Cindy Tegar");
-  const [address, setAddress] = useState("Surabaya");
-  const [phoneNumber, setPhoneNumber] = useState("08123456789");
+const EditProfile = ({ route }) => {
+  
   const navigation = useNavigation();
+  const [profile, setProfile] = useState({
+    email: '',
+    password: '',
+    kegiatan: '',
+  });
+
+  // KODE UNTUK MENDAPATKAN DATA USER
+  useEffect(() => {
+    getData('user').then((res) => {
+      const data = res;
+      if (data) {
+        setProfile(data);
+      }
+    });
+  }, []);
 
   const handleSave = () => {
-
-    console.log("Data saved:", { fullName, address, phoneNumber });
-
+    console.log("Data saved:", profile);
 
     Alert.alert(
       "Profile Telah diganti !",
@@ -28,157 +41,56 @@ const EditProfile = () => {
   };
 
   return (
-    // <>
-    // <ScrollView>
-    //   <Box flex={1} backgroundColor='#021C35'>
-    //     <Box flex={1} alignItems="center">
-    //     {/* <Image role="img" alt="20" width={200} height={200} rounded={50} marginTop={10} 
-    //         source={require('../../assets/firli2.jpg')}/> */}
-    //       <Heading color='white' fontSize={25}>{fullName}</Heading>
-    //     </Box>
-    //     <Box flex={1} padding={20} marginTop={50} width={"100%"} borderTopLeftRadius={50} borderTopRightRadius={50} backgroundColor="white">
-    //       <Input
-    //         marginTop={20}
-    //         borderWidth={0}
-    //         placeholder="Nama Lengkap"
-    //         backgroundColor="#f3f3f3"
-    //         rounded={10}
-    //         onChangeText={(text) => setFullName(text)}
-    //       >
-    //         <InputField placeholder="Username"  />
-    //       </Input>
-    //       <Input
-    //         marginTop={20}
-    //         borderWidth={0}
-    //         onChangeText={(text) => setAddress(text)}
-    //         backgroundColor="#f3f3f3"
-    //         rounded={10}
-    //       >
-    //         <InputField placeholder="Alamat Lengkap"  />
-    //       </Input>
-    //       <Input
-    //         placeholder="Nomor Hp"
-    //         marginTop={20}
-    //         borderWidth={0}
-    //         backgroundColor="#f3f3f3"
-    //         rounded={10}
-    //         onChangeText={(text) => setPhoneNumber(text)}
-    //       >
-    //         <InputField  placeholder="Nomor Hp" />
-    //       </Input>
-    //       <Button marginTop={50} backgroundColor="#DF9B52" rounded={10} onPress={handleSave}>
-    //         <Heading color="white">Save</Heading>
-    //       </Button>
-    //     </Box>
-    //   </Box>
-    //   </ScrollView>
-    //   </>
     <>
       <Header title={"Edit Profile"} withBack="true" />
       <ScrollView>
-        
         <Box flex={1} bgColor='#fffff' alignItems='center'>
           <Box flex={1} alignItems="center">
-            <Heading marginTop={30}>Profile saya</Heading>
+          <Heading color="red" fontSize={30} marginTop={20}>{profile?.nama}</Heading>
             <Image role="img" alt="20" width={200} height={200} rounded={50} marginTop={10}
-              source={require('../assets/firli2.jpg')} />
+              source={require('../assets/logoprofile.png')} />
           </Box>
           <Box flex={2} marginTop={20} width={"100%"} borderTopLeftRadius={50} borderTopRightRadius={50} bg="$#800000" >
             <Box borderRadius={10} width={"15%"} height={4} bg="white" alignSelf="center" marginTop={20}></Box>
             <HStack justifyContent="space-between" mx={20}>
               <Box></Box>
-              <Pressable onPress={EditProfile}>
-                <Icon name="account-edit" size={50} color="#ffffff" />
-              </Pressable>
             </HStack>
-            <Box marginTop={-20}  >
-              <VStack >
-                <Heading ml={20} color="white" fontWeight="bold">Nama Lengkap :</Heading>
+            <Box marginTop={25} paddingBottom={25}>
+              
+              <VStack marginTop={20}>
+                <Heading ml={20} color="white" fontWeight="bold">Email :</Heading>
                 <Input
                   alignSelf="center"
                   marginTop={20}
                   borderWidth={0}
-                  placeholder="Ubah Nama Lengkap"
+                  placeholder="Ubah Email terbaru"
                   backgroundColor="#f3f3f3"
                   rounded={10}
                   w={"90%"}
-                  onChangeText={(text) => setFullName(text)}>
-                  <InputField placeholder="Ubah Nama Lengkap terbaru" />
-                </Input>
-              </VStack>
-              <VStack marginTop={25}>
-                <Heading ml={20} color="white" fontWeight="bold" fontSize={20}>NIM :</Heading>
-                <Input
-                  alignSelf="center"
-                  marginTop={20}
-                  borderWidth={0}
-                  placeholder="Ubah Nim terbaru"
-                  backgroundColor="#f3f3f3"
-                  rounded={10}
-                  w={"90%"}
-                  onChangeText={(text) => setFullName(text)}>
-                  <InputField placeholder="Ubah Nim terbaru" />
-                </Input>
-              </VStack>
-              <VStack marginTop={25}>
-                <Heading ml={20} color="white" fontWeight="bold">Angkatan :</Heading>
-                <Input
-                  alignSelf="center"
-                  marginTop={20}
-                  borderWidth={0}
-                  placeholder="Ubah Angkatan terbaru"
-                  backgroundColor="#f3f3f3"
-                  rounded={10}
-                  w={"90%"}
-                  onChangeText={(text) => setFullName(text)}>
-                  <InputField placeholder="Ubah Angkatan terbaru" />
-                </Input>
-              </VStack>
-              <VStack marginTop={25}>
-              <Heading ml={20} color="white" fontWeight="bold">Prodi :</Heading>
-                <Input
-                  alignSelf="center"
-                  marginTop={20}
-                  borderWidth={0}
-                  placeholder="Ubah Prodi terbaru"
-                  backgroundColor="#f3f3f3"
-                  rounded={10}
-                  w={"90%"}
-                  onChangeText={(text) => setFullName(text)}>
-                  <InputField placeholder="Ubah Prodi terbaru" />
-                </Input>
-              </VStack>
-              <VStack marginTop={25}>
-              <Heading ml={20} color="white" fontWeight="bold">No Telepon :</Heading>
-                <Input
-                  alignSelf="center"
-                  marginTop={20}
-                  borderWidth={0}
-                  placeholder="Ubah No Telepon terbaru"
-                  backgroundColor="#f3f3f3"
-                  rounded={10}
-                  w={"90%"}
-                  onChangeText={(text) => setFullName(text)}>
-                  <InputField placeholder="Ubah No Telepon terbaru" />
-                </Input>
-              </VStack>
-              <VStack marginTop={25}>
-              <Heading ml={20} color="white" fontWeight="bold">Asal Kota :</Heading>
-                <Input
-                  alignSelf="center"
-                  marginTop={20}
-                  borderWidth={0}
-                  placeholder="Ubah No Asal kota terbaru"
-                  backgroundColor="#f3f3f3"
-                  rounded={10}
-                  w={"90%"}
-                  onChangeText={(text) => setFullName(text)}>
-                  <InputField placeholder="Ubah No Asal kota terbaru" />
+                  onChangeText={(text) => setProfile({ ...profile, nama: text })}
+                >
+                  <InputField placeholder="Ubah Email terbaru" />
                 </Input>
               </VStack>
 
-              <VStack marginTop={25} paddingBottom={25}>
-              <Heading ml={20} color="white" fontWeight="bold">Riwayat Kegiatan:</Heading>
+              <VStack marginTop={20}>
+                <Heading ml={20} color="white" fontWeight="bold" fontSize={20}>Password :</Heading>
+                <Input
+                  alignSelf="center"
+                  marginTop={20}
+                  borderWidth={0}
+                  placeholder="Ubah Password terbaru"
+                  backgroundColor="#f3f3f3"
+                  rounded={10}
+                  w={"90%"}
+                  onChangeText={(text) => setProfile({ ...profile, password: text })}
+                >
+                  <InputField placeholder="Ubah Password terbaru" />
+                </Input>
+              </VStack>
+
+              <VStack marginTop={20} paddingBottom={20}>
+                <Heading ml={20} color="white" fontWeight="bold">Riwayat Kegiatan:</Heading>
                 <Input
                   alignSelf="center"
                   marginTop={20}
@@ -187,9 +99,14 @@ const EditProfile = () => {
                   backgroundColor="#f3f3f3"
                   rounded={10}
                   w={"90%"}
-                  onChangeText={(text) => setFullName(text)}>
+                  onChangeText={(text) => setProfile({ ...profile, kegiatan: text })}
+                >
                   <InputField placeholder="Ubah Riwayat Kegiatan terbaru" />
                 </Input>
+          
+              <Button alignSelf={"center"} onPress={handleSave} bg={"#ffff"} mt={3} w={"90%"} h={50} rounded={10} marginTop={40} >
+                <Heading color={"red"} fontSize={20}>Save</Heading>
+              </Button>
               </VStack>
             </Box>
           </Box>

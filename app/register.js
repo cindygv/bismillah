@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import {
+  Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
+  ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
+  ButtonIcon, Center, View, Alert, Modal, Image,
   Heading,
   FormControl,
   VStack,
@@ -33,6 +36,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [nim, setNim] = useState("");
   const [prodi, setProdi] = useState("");
+  const [kegiatan, setKegiatan] = useState("");
   const [password, setPassword] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
@@ -56,6 +60,7 @@ const Register = () => {
         nim: nim,
         nama: nama,
         prodi: prodi,
+        kegiatan: kegiatan,
         password: password,
         status: "user",
       };
@@ -64,7 +69,7 @@ const Register = () => {
 
       try {
         const user = await registerUser(data, password);
-        navigation.replace("login");
+        navigation.replace("(tabs)");
       } catch (error) {
         console.log("Error", error.message);
         toggleAlert(error.message);
@@ -97,6 +102,9 @@ const Register = () => {
             },
           }}
         >
+          <Box alignItems="center"  >
+        <Image role="img" alt="hello" w={80} h={80} mb={10} source={require('../assets/logotelport.png')} />
+      </Box>
           <VStack space="xl">
             <Heading color="#010203" lineHeight="$md" mb="$12">
               Register
@@ -133,6 +141,14 @@ const Register = () => {
               <Input >
                 <InputField type="text" placeholder="Ketikan prodi" value={prodi}
                   onChangeText={(prodi) => setProdi(prodi)} />
+              </Input>
+              <Separator height={10} />
+              <Text color="#010203" lineHeight="$xs">
+                Kegiatan yang pernah diikuti:
+              </Text>
+              <Input >
+                <InputField type="text" placeholder="Kegiatan kampus yang pernah diikuti" value={kegiatan}
+                  onChangeText={(kegiatan) => setKegiatan(kegiatan)} />
               </Input>
               <Separator height={10} />
               <Text color="#010203" lineHeight="$xs">

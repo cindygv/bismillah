@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {
-  Heading, FormControl, FormControlHelper, FormControlHelperText, FormControlLabel, FormControlLabelText, VStack, Text, Input, InputField, InputSlot, InputIcon,
+  Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
   ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
-  ButtonIcon, Center, View
+  ButtonIcon, Center, View, Image, HStack, Divider, ScrollView
 } from "@gluestack-ui/themed";
 import Separator from "../components/separator";
 import { useNavigation, Link } from "expo-router";
@@ -23,22 +23,17 @@ const Login = () => {
     })
   }
 
-  const toggleAlert = (message) => {
-    setShowAlert(!showAlert);
-    setAlertMessage(message);
-  };
 
   const login = () => {
     if (email && password) {
       loginAdmin(email, password)
         .then((admin) => {
           // Pengguna berhasil login, lakukan sesuatu dengan data pengguna jika perlu
-          navigation.replace("admin/halamanAdmin");
+          navigation.replace("(AdminTabs)");
         })
         .catch((error) => {
           // Terjadi kesalahan saat login, tampilkan pesan kesalahan
           console.log("Error", error.message);
-          toggleAlert(error.message);
         });
     }
   };
@@ -69,35 +64,33 @@ const Login = () => {
         >
           <VStack space="xl">
             <Center>
-              <Heading color="$text900" lineHeight="$md">
-                Login Admin
+              <Heading color="$text900" lineHeight="$2xl">
+                Login sebagai Admin
               </Heading>
             </Center>
-            <VStack space="xs">
-              <FormControl minWidth="$80" isRequired={true}>
-                <FormControlLabel>
-                  <FormControlLabelText>Email</FormControlLabelText>
-                </FormControlLabel>
-                <Input>
-                  <InputField 
-                    type="text" 
-                    onChangeText={(text) => setEmail(text)} // Set email ke dalam state
-                    value={email} 
-                  />
-                </Input>
-                <FormControlHelper>
-                  <FormControlHelperText>
-                    Biarkan kami mengenalmu
-                  </FormControlHelperText>
-                </FormControlHelper>
-              </FormControl>
+            <Text color="$text900" lineHeight="$xs"> Email</Text>
+      <VStack space="md" marginTop={1}>
+              <Input
+                borderBottomWidth={3}
+                borderEndWidth={3}
+                borderTopWidth={1}
+                borderStartWidth={1}
+                rounded={7}
+                marginBottom={5}
+                borderColor='#021C35'
+              >
+                <InputField value={email} type="text" placeholder="Masukkan Email" onChangeText={(value) => setEmail(value)} />
+              </Input>
             </VStack>
-            <VStack space="xs">
-            <FormControl minWidth="$80" isRequired={true}>
-                <FormControlLabel>
-                  <FormControlLabelText>Password</FormControlLabelText>
-                </FormControlLabel>
-              <Input textAlign="center">
+            <Text color="$text900" lineHeight="$xs">Password</Text>
+            <VStack space="md">
+              <Input
+                borderBottomWidth={3}
+                borderEndWidth={3}
+                borderTopWidth={1}
+                borderStartWidth={1}
+                rounded={7}
+                borderColor='#021C35'>
                 <InputField type={showPassword ? "text" : "password"} onChangeText={(text) => setPassword(text)} // Set password ke dalam state
                   value={password}
                 />
@@ -108,37 +101,22 @@ const Login = () => {
                   />
                 </InputSlot>
               </Input>
-              <FormControlHelper>
-                  <FormControlHelperText>
-                    Buatlah minimal 6 karakter
-                  </FormControlHelperText>
-                </FormControlHelper>
-              </FormControl>
             </VStack>
 
-            <Button onPress={() => login()} action="negative">
-              <Text bold color="white">Login</Text>
-            </Button>
-            <Button onPress={Register} action="negative">
-              <Text bold color="white">Register</Text>
-            </Button>
-
-            {/* <Link style={{ backgroundColor: "black", width: "100%", height: "15%" }} href="/home">
-              <Center>
-                <Text style={{ color: "white", width: "100%", height: "40px", justifyContent: "center" }}>Login</Text>
-              </Center>
-            </Link> */}
-
-          </VStack>
-          <Separator height={10} />
-          {/* <Button size="md" variant="solid" action="negative" isDisabled={false} isFocusVisible={false} >
-            <Link href="/register">
-              <ButtonText>Register</ButtonText>
-            </Link>
-            <ButtonIcon />
-          </Button> */}
-        </FormControl>
-      </Box>
+              <Button onPress={() => login()} action="negative" 
+                  borderBottomWidth={3}
+                  borderEndWidth={3}
+                  borderTopWidth={1}
+                  borderStartWidth={2}
+                  rounded={7}
+                  borderColor='#000000'>
+                <Text bold color="white">Login</Text>
+              </Button>
+            </VStack>
+            <Separator height={10} />
+          </FormControl>
+        </Box>
+      </ScrollView>
     </>
   );
 };

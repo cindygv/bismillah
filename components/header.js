@@ -54,9 +54,9 @@ const Header = ({ title, withBack = false, withClose = false }) => {
                                 <TouchableOpacity onPress={Notifications}>
                                     <Ionicons name="notifications" size={32} color="white" />
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={Login}>
+                                {/* <TouchableOpacity onPress={Login}>
                                     <Ionicons name="person" size={32} color="white" />
-                                </TouchableOpacity>
+                                </TouchableOpacity> */}
                             </HStack>
                         </TouchableOpacity>
                     </HStack>
