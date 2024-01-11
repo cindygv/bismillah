@@ -146,7 +146,7 @@ const Login = () => {
             borderStartWidth={2}
             rounded={7}
             borderColor='#000000'>
-            <Text bold color="white">Login</Text>
+            <Text bold color="#FFFFFF">Login</Text>
           </Button>
 
                     {/* Divider and Register Button */}
@@ -165,7 +165,7 @@ const Login = () => {
             borderStartWidth={2}
             rounded={7}
             borderColor='#000000'>
-            <Text bold color="white">Register</Text>
+            <Text bold color="#FFFFFF">Register</Text>
           </Button>
           <AlertDialog
               isOpen={showAlertDialog}

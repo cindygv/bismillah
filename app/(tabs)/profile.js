@@ -61,7 +61,7 @@ const Profile = () => {
     <>
       <Header title={"Profile"} />
       <ScrollView>
-        <Box flex={1} bgColor='#fffff' alignItems='center'>
+        <Box flex={1} bgColor='#ffffff' alignItems='center'>
           <Box flex={1} alignItems="center">
           <Heading color="black" fontSize={30} marginTop={20}>{profile?.nama}</Heading>
           <Ionicons name="person-circle-outline" size={200} color="#800000" />

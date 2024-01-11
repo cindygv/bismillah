@@ -20,6 +20,9 @@ const StackLayout = () => {
                     <Stack.Screen name="bem" options={noHead} />
                     <Stack.Screen name="hmsi" options={noHead} />
                     <Stack.Screen name="hmti" options={noHead} />
+                    <Stack.Screen name="ukki" options={noHead} />
+                    <Stack.Screen name="coder" options={noHead} />
+                    <Stack.Screen name="ecitts" options={noHead} />
                     <Stack.Screen name="dpm" options={noHead} />
                     <Stack.Screen name="penelitian" options={noHead} />
                     <Stack.Screen name="login" options={noHead} />
@@ -27,8 +30,6 @@ const StackLayout = () => {
                     <Stack.Screen name="EditProfile" options={noHead} />
                     <Stack.Screen name="notifikasi" options={noHead} />
                     <Stack.Screen name="splash" options={noHead} />
-                    <Stack.Screen name="loginAdmin" options={noHead} />
-                    <Stack.Screen name="registerAdmin" options={noHead} />
                     <Stack.Screen name="infoposter" options={noHead} />
                     <Stack.Screen name="AdminEdit" options={noHead} />
                     <Stack.Screen name="AdminDetailPoster" options={noHead} />

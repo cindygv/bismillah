@@ -33,7 +33,7 @@ const EditProfile = ({ route }) => {
     <>
       <Header title={"Edit Profile"} withBack="true" />
       <ScrollView>
-        <Box flex={1} bgColor='#fffff' alignItems='center'>
+        <Box flex={1} bgColor='#ffffff' alignItems='center'>
           <Box flex={1} alignItems="center">
             <Heading color="black" fontSize={30} marginTop={20}>{profile?.nama}</Heading>
             <Ionicons name="person-circle-outline" size={200} color="#800000" />
@@ -75,7 +75,7 @@ const EditProfile = ({ route }) => {
                 <Button alignSelf={"center"} onPress={async () => {
                   await editProfile(profile);
                   navigation.goBack();
-                }} bg={"#ffff"} mt={3} w={"90%"} h={50} rounded={10} marginTop={100} >
+                }} bg={"#ffffff"} mt={3} w={"90%"} h={50} rounded={10} marginTop={100} >
                   <Heading color={"green"} fontSize={20}>Save</Heading>
                 </Button>
               </VStack>
