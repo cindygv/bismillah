@@ -2,35 +2,31 @@ import React, { useEffect } from 'react';
 import { Box, Image } from '@gluestack-ui/themed';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getData } from '../utils/localStorage';
 
 const Splash = () => {
     const navigation = useNavigation();
-    useEffect(() => {
-        const checkUserStatus = async () => {
-            try {
-                const userData = await getData('user');
-                if (userData) {
-                    // Jika user data ada, periksa status admin
-                    const isAdmin = userData.status === 'admin';
 
-                    if (isAdmin) {
-                        navigation.replace('(AdminTabs)');
-                    } else {
-                        navigation.replace('(tabs)');
-                    }
-                } else {
-                    navigation.replace('login');
-                }
-            } catch (error) {
-                console.error('Error checking user status:', error);
+    useEffect(() => {
+        const timeout = setTimeout(async () => {
+            getUser();
+        }, 2000);
+
+        return () => clearTimeout(timeout);
+
+    }, []);
+
+    const getUser = async () => {
+        try {
+            const userData = await AsyncStorage.getItem("user");
+            if (userData) {
+                navigation.replace('(tabs)');
+            } else {
                 navigation.replace('login');
             }
-        };
-
-        // Periksa status user saat komponen di-mount
-        checkUserStatus();
-    }, [navigation]);
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
     return (
         <Box flex={1} justifyContent="center" alignItems="center" backgroundColor="white">
