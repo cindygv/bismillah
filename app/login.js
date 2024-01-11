@@ -8,7 +8,6 @@ import Separator from "../components/separator";
 import { useNavigation, Link } from "expo-router";
 import { loginUser } from "../actions/AuthAction"
 import { storeData } from "../utils/localStorage";
-import Toast from 'react-native-toast-message'
 
 const Login = () => {
   const [email, setEmail] = useState("");

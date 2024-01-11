@@ -1,0 +1,270 @@
+[33mcommit 71470e68d305014a83ffc4ea6637bdd42d5a17c4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/clone[m[33m, [m[1;32mclone[m[33m)[m
+Author: Ansar Nur Jamas <jamasguitarist@gmail.com>
+Date:   Wed Jan 10 21:54:15 2024 +0700
+
+    clone
+
+[33mcommit 54e3e220fa4ced7ae91ffaafcc63865a94135b16[m[33m ([m[1;31morigin/tegar[m[33m, [m[1;31morigin/master[m[33m, [m[1;32m71470e68d305014a83ffc4ea6637bdd42d5a17c4[m[33m)[m
+Author: tegarprasettya2023 <tegarprasettya73@gmail.com>
+Date:   Tue Jan 9 22:34:48 2024 +0700
+
+    sytling lagi
+
+[33mcommit 4fbb913354a58c20b0b890f4ca2d523139676db9[m
+Author: tegarprasettya2023 <tegarprasettya73@gmail.com>
+Date:   Tue Jan 9 21:55:27 2024 +0700
+
+    edit styling editprofile,profile,infoposter
+
+[33mcommit 95d147f4e0dc840d5f233d14babd83590c97e937[m
+Author: tegarprasettya2023 <tegarprasettya73@gmail.com>
+Date:   Tue Jan 9 19:25:40 2024 +0700
+
+    edit profile profile register login splash
+
+[33mcommit dc261a079545f148f4204f9ffedf335b30409c8c[m
+Merge: 402ee5a b68d6d9
+Author: tegarprasettya2023 <tegarprasettya73@gmail.com>
+Date:   Tue Jan 9 16:50:37 2024 +0700
+
+    Merge branch 'arda' of https://github.com/cindygv/kel6pab into tegar
+
+[33mcommit b68d6d9f6ee87e35f67588ed01d38356d4ea1536[m[33m ([m[1;31morigin/arda[m[33m)[m
+Author: Ardatika <ardatikadc@gmail.com>
+Date:   Sat Jan 6 12:20:09 2024 +0700
+
+    styling info poster arda
+
+[33mcommit 9a2683a8d1d2fdd65abfa5e932ecb2d1776a8bcf[m
+Author: Ardatika <ardatikadc@gmail.com>
+Date:   Thu Jan 4 18:34:17 2024 +0700
+
+    penambahan info poster, perbaikan header
+
+[33mcommit 3bf125b12489918d7062f8d1309f83df0c10e6f2[m
+Author: Ardatika <ardatikadc@gmail.com>
+Date:   Thu Jan 4 17:02:21 2024 +0700
+
+    commit 1
+
+[33mcommit 4fba8827e645cd819891036ab80ccb35372441da[m
+Author: Ardatika <ardatikadc@gmail.com>
+Date:   Thu Jan 4 17:01:37 2024 +0700
+
+    commit
+
+[33mcommit 534cc520de206f2ed2cf6bb1f0e4283049da76c5[m
+Merge: 9083097 e8f9b1c
+Author: Ardatika <ardatikadc@gmail.com>
+Date:   Thu Jan 4 16:00:54 2024 +0700
+
+    arda
+
+[33mcommit e8f9b1ce8ef080ccd6b3442a3b0fb99611f5fae2[m[33m ([m[1;31morigin/firli[m[33m)[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Tue Jan 2 19:41:05 2024 +0700
+
+    halaman admin input data
+
+[33mcommit d3d7516d3b7ad0679eab077c4da2e50c61f9c291[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Mon Jan 1 19:24:08 2024 +0700
+
+    firli
+
+[33mcommit 63f5aa5dedd5616bf9a25ea7df00ccc985c648db[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Fri Dec 29 14:56:22 2023 +0700
+
+    >.<
+
+[33mcommit 6c13e8d0c999fee113137ba40530e96df444ca8b[m
+Merge: 34bdb81 8bf8f2a
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Wed Dec 27 16:41:56 2023 +0700
+
+    Merge branch 'main' of https://github.com/cindygv/kel6pab into firli
+
+[33mcommit 8bf8f2a185203401816b4e6c11c714c80e364139[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Wed Dec 27 16:18:04 2023 +0700
+
+    penambahan logim register admin firli
+
+[33mcommit f8e0d54220cb558e095ab3d9ea028e0c1fd9eb0d[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Tue Dec 26 14:40:20 2023 +0700
+
+    auth log dan reg
+
+[33mcommit 8d6222b137ca9e94cffa3d88cf94d88d3930bf93[m
+Author: tegarprasettya2023 <tegarprasettya73@gmail.com>
+Date:   Tue Dec 26 02:24:40 2023 +0700
+
+    3 tabs edit profile dan notif
+
+[33mcommit 402ee5a941ce8c72753a49f68c6a52c9414f5d4c[m
+Author: tegarprasettya2023 <tegarprasettya73@gmail.com>
+Date:   Mon Dec 25 19:25:12 2023 +0700
+
+    editprofile 3 tabscreen
+
+[33mcommit 34bdb811805bd4b4c20fc72e5fd518064b4c0968[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Mon Dec 18 08:33:53 2023 +0700
+
+    juan update
+
+[33mcommit 8ac5872faed28225d7877e10bd2cc13c03d6c1b0[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Mon Dec 11 19:59:54 2023 +0700
+
+    halaman login
+
+[33mcommit 16379ad5bd7b9eafcd411327de3414359ea4883c[m
+Author: tegarprasettya2023 <tegarprasettya73@gmail.com>
+Date:   Wed Nov 15 09:34:15 2023 +0700
+
+    notifikasi
+
+[33mcommit 88b3648b023bbb6a33212baa9d1d973768fa7e68[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Mon Nov 13 17:02:00 2023 +0700
+
+    update
+
+[33mcommit 332e26ec0d771c9d1f2467e007c02783dd049709[m
+Author: allanpratama <136489502+allanpratama@users.noreply.github.com>
+Date:   Sun Nov 12 22:56:01 2023 +0700
+
+    Add files via upload
+
+[33mcommit 3328b73d70128bdcc0e0afbc22cdc4e873b5ade5[m
+Author: allanpratama <136489502+allanpratama@users.noreply.github.com>
+Date:   Sun Nov 12 22:53:33 2023 +0700
+
+    Add files via upload
+
+[33mcommit ee2e675132ca02b34ed00e5e6dc1542ea552d40a[m
+Merge: 405f2c1 34a818c
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Sun Nov 12 21:03:02 2023 +0700
+
+    Merge branch 'cindy' of https://github.com/cindygv/kel6pab into firli
+
+[33mcommit 405f2c146dfcda6b3061ac5ca408c0cb72acbd9e[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Sun Nov 12 20:55:22 2023 +0700
+
+    update about
+
+[33mcommit 34a818ca02045e659bb80df97533bd2ae8af4da9[m
+Merge: d1d8e59 895d73e
+Author: cindygv <111652246+cindygv@users.noreply.github.com>
+Date:   Sun Nov 12 20:40:25 2023 +0700
+
+    Merge pull request #4 from cindygv/main
+    
+    Main
+
+[33mcommit 895d73eacba577e08e7ac1ab51e38df862d9a4b7[m
+Merge: bd03f47 3999e24
+Author: sandist10 <135734317+sandist10@users.noreply.github.com>
+Date:   Sun Nov 12 19:54:33 2023 +0700
+
+    Merge pull request #3 from cindygv/firli
+    
+    update login dan register
+
+[33mcommit 3999e24538d3cbb6bb5b93fb4636da3e05e7a38a[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Sun Nov 12 19:49:57 2023 +0700
+
+    update login dan register
+
+[33mcommit 9083097b068eaa9e98c4cbc30ca737d06b3daeb1[m[33m ([m[1;31morigin/arda2[m[33m)[m
+Author: Ardatika <ardatikadc@gmail.com>
+Date:   Sun Nov 12 14:35:23 2023 +0700
+
+    branch baru
+
+[33mcommit d1d8e59a78d83772319f32fe1f8e874d33c27a32[m
+Merge: 0e8ae74 bd03f47
+Author: cindygv <111652246+cindygv@users.noreply.github.com>
+Date:   Sun Nov 12 14:16:54 2023 +0700
+
+    Merge pull request #2 from cindygv/main
+    
+    Main
+
+[33mcommit 0e8ae743b97c09eca3e47118fa2df3bb443c8162[m
+Author: cindygv <cindygracyavcgv@gmail.com>
+Date:   Sun Nov 12 14:14:11 2023 +0700
+
+    perubahan lagi
+
+[33mcommit 669a0411d43809a27d56d4047c8bcaefac8b8680[m
+Author: Ardatika <ardatikadc@gmail.com>
+Date:   Sun Nov 12 13:58:14 2023 +0700
+
+    perbaikan home dan header
+
+[33mcommit bd03f47e107492ef726ccb14d224c0622aa63184[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Sun Nov 12 13:31:36 2023 +0700
+
+    change logo
+
+[33mcommit 609a648c54af636cfd1dd4ab950d1ac41a7ce06c[m
+Merge: 0e5c36c 8e90777
+Author: tegarprasettya2023 <133255915+tegarprasettya2023@users.noreply.github.com>
+Date:   Sun Nov 12 13:14:42 2023 +0700
+
+    Merge pull request #1 from cindygv/tegar
+    
+    halaman profil,notif,about
+
+[33mcommit 8e9077735088ab584b8ccb76f4283d4ab1529c4e[m
+Author: tegarprasettya2023 <tegarprasettya73@gmail.com>
+Date:   Sun Nov 12 13:12:55 2023 +0700
+
+    halaman profil,notif,about
+
+[33mcommit 0e5c36c33aeb9ab6ebff78c5ec923e2b330e7ffd[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Sun Nov 12 08:30:56 2023 +0700
+
+    firli update home sama hider
+
+[33mcommit ef6ad2c2993762db328f500f0421ba9bb6812776[m
+Author: Firli Juan <sandiwalker2001@gmail.com>
+Date:   Sun Nov 12 07:43:58 2023 +0700
+
+    update firli
+
+[33mcommit 2cb60df9983137fcb3292a619a7479f170da59aa[m
+Author: cindygv <cindygracyavcgv@gmail.com>
+Date:   Sun Nov 12 01:43:19 2023 +0700
+
+    penambahan ormawa
+
+[33mcommit c8263b2e04368c008809cebec9bdcd4f2a5a755a[m
+Merge: ef402c2 a38f1cc
+Author: Ardatika <ardatikadc@gmail.com>
+Date:   Sat Nov 11 16:00:14 2023 +0700
+
+    Merge branch 'juan' of https://github.com/cindygv/kel6pab into arda
+
+[33mcommit 6daf1c9385348402a2cbe114c83ab1b1b25c23d9[m
+Author: cindygv <cindygracyavcgv@gmail.com>
+Date:   Sat Nov 11 15:54:11 2023 +0700
+
+    touchable kategori
+
+[33mcommit ef402c2361457b9014f9f0693fa238e2d286c316[m
+Author: Ardatika <ardatikadc@gmail.com>
+Date:   Sat Nov 11 15:32:20 2023 +0700
+
+    Ini Screen Home/Arda
+
+[33mcommit a38f1cc1
