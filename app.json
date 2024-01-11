@@ -1,14 +1,13 @@
 {
   "expo": {
-    "name": "nav-two",
-    "slug": "nav-two",
+    "name": "Telport",
+    "slug": "Telport",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "scheme": "my-scheme",
     "splash": {
-      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

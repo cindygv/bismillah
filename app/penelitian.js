@@ -1,95 +1,132 @@
-import {
-    Image,
-    HStack,
-    VStack,
-    Text,
-    ScrollView,
-  } from "@gluestack-ui/themed";
-  import { Header } from "../components";
-  import { Link } from "expo-router";
-  
-  const Penelitian = () => {
-    return (
-      <>
-        <Header title={"PENELITIAN"} />
+import { ScrollView, Box, VStack, Text, Image, Heading, Button, HStack, } from "@gluestack-ui/themed";
+import { Link, router, useLocalSearchParams } from "expo-router";
+import { Header } from "../components";
+import React from 'react';
+import { TouchableOpacity } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-      <ScrollView
-            vertical={true} 
-            contentContainerStyle={{ paddingVertical: 1 }} >   
-    <HStack space={"md"} backgroundColor="lightyellow">
-        <Image
-        source={require('../assets/sleep.jpeg')}
-          alt="Gambar sleep"
-          w="$40" 
-          h="$40"
-        />
-        <Link
-          href={{
-           pathname: "/sleepscreen" 
-          }}
-        >
-        <VStack space="md" >
-          <Text>Sleep Tech</Text>
-          <Text>Alat pengatur pola tidur</Text>
-        </VStack>
-      </Link>
-    </HStack>
-  
-    <HStack space={"md"} backgroundColor="lightyellow">
-      <Image
-       source={require('../assets/makan.jpeg')}
-        alt="Gambar Makan"
-        w="$40" 
-        h="$40"
-      />
-      <VStack space="md">
-        <Text>Analisis Pola Makan</Text>
-        <Text>Pola Makanan Manusia</Text>
-      </VStack>
-    </HStack>
+const Reservation = () => {
 
-    <HStack space={"md"} backgroundColor="lightyellow">
-      <Image
-        source={require('../assets/taman.jpeg')}
-        alt="Gambar Taman"
-        w="$40" 
-        h="$40"
-      />
-      <VStack space="md">
-        <Text>Taman Teknologi</Text>
-        <Text>Taman Masa Depan</Text>
-      </VStack>
-    </HStack>
-
-    <HStack space={"md"} backgroundColor="lightyellow">
-      <Image
-       source={require('../assets/robot.jpeg')}
-        alt="Gambar Robot"
-        w="$40" 
-        h="$40"
-      />
-      <VStack space="md">
-        <Text>Animal Robotic</Text>
-        <Text>Hewan Robot</Text>
-      </VStack>
-    </HStack>
-
-    <HStack space={"md"} backgroundColor="lightyellow" >
-      <Image
-        source={require('../assets/cuaca.jpeg')}
-        alt="Gambar Cuaca"
-        w="$40" 
-        h="$40"
-      />
-      <VStack space="md">
-        <Text>Perubahan Siklus Cuaca</Text>
-        <Text>Teknologi Pengatur Cuaca</Text>
-      </VStack>
-    </HStack>
-    </ScrollView>
-      </>
-    );
+  const handleBoxPress = (screenName) => {
+    router.push(screenName);
   };
-  
-  export default Penelitian;
-  
+
+  return (
+    <>
+      <Header title={"Penelitian"} />
+        <Heading lineHeight={"$5xl"} color="$black" ml={"$5"}>
+          Pendaftaran Penelitian
+        </Heading>
+        <TouchableOpacity onPress={() => handleBoxPress('formpenelitian')}>
+          <Box
+            w={110}
+            h="$100"
+            mr="$10"
+            bg="$coral"
+            ml={19}
+            borderRadius="$3xl"
+            borderWidth={2}
+            alignItems="center"
+            softShadow=""
+          >
+            <Link
+              href={{
+                pathname: "/formpenelitian"
+              }}
+            >
+              <HStack>
+                <Ionicons
+                  name="add-circle-outline"
+                  size={30}
+                  color="floralwhite"
+                  paddingBottom="3"
+                />
+                <Text color="floralwhite" fontWeight="bold" size="md" pt="$1.5">
+                  Form
+                </Text>
+              </HStack>
+            </Link>
+          </Box>
+        </TouchableOpacity>
+        <ScrollView flex={1} backgroundColor="fwhite">
+        <TouchableOpacity onPress={() => handleBoxPress('/formspenelitian')}>
+          <Box
+            maxWidth='$54'
+            borderColor='$borderLight200'
+            borderRadius='$lg'
+            borderWidth='$1'
+            my="$4"
+            overflow="hidden"
+            sx={{
+              "@base": {
+                mx: '$5',
+              },
+              "_dark": {
+                bg: "$backgroundDark900",
+                borderColor: '$borderDark800'
+              },
+            }}
+          >
+            <Box>
+              <Image
+                h={150}
+                width="100%"
+                source={require('../assets/firli2.jpg')}
+              />
+            </Box>
+            <Box>
+              <VStack px='$6' pt='$4' pb='$6'>
+                <Heading _dark={{ color: "$textLight200" }} size='sm'>
+                  Seminar Coding
+                </Heading>
+                <Text my='$1.5' _dark={{ color: "$textLight200" }} fontSize='$xs'>
+                Seminar coding ini merupakan kesempatan luar biasa bagi para pengembang perangkat lunak, mahasiswa IT, dan para profesional teknologi untuk 
+                menjelajahi dunia yang terus berkembang dalam pengodingan dan pemrograman. Dengan fokus pada tren terkini, alat-alat mutakhir, dan praktik terbaik, 
+                seminar ini dirancang untuk memberikan wawasan mendalam dan inspirasi kepada peserta.
+                </Text>
+              </VStack>
+            </Box>
+          </Box>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => handleBoxPress('DetailPenitipan')}>
+          <Box
+            maxWidth='$54'
+            borderColor='$borderLight200'
+            borderRadius='$lg'
+            borderWidth='$1'
+            my="$4"
+            overflow="hidden"
+            sx={{
+              "@base": {
+                mx: '$5',
+              },
+              "_dark": {
+                bg: "$backgroundDark900",
+                borderColor: '$borderDark800'
+              },
+            }}
+          >
+            <Box>
+              <Image
+                h={150}
+                width="100%"
+                source={require('../assets/firli2.jpg')}
+              />
+            </Box>
+            <VStack px='$6' pt='$4' pb='$6'>
+              <Heading _dark={{ color: "$textLight200" }} size='sm'>
+                Paket Penitipan Hewan
+              </Heading>
+              <Text my='$1.5' _dark={{ color: "$textLight200" }} fontSize='$xs'>
+                Menyediakan layanan penitipan hewan dengan beberapa kamar pilihan
+              </Text>
+            </VStack>
+          </Box>
+        </TouchableOpacity>
+      </ScrollView>
+    </>
+  );
+};
+
+export default Reservation;

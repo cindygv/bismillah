@@ -1,12 +1,24 @@
 import { Box, Image, HStack, Heading, Text } from "@gluestack-ui/themed";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
-import { useNavigation } from "expo-router";
+import { useNavigation, Link } from "expo-router";
+import { Stack } from "expo-router";
+import { GluestackUIProvider } from "@gluestack-ui/themed";
+import { config } from "@gluestack-ui/config";
 
 const Header = ({ title, withBack = false, withClose = false }) => {
     const trueGray900 = "#800000";
     const navigation = useNavigation();
+    const Notifications = () => {
+        navigation.navigate("notifikasi");
+    };
+    const Login = () => {
+        navigation.navigate("login");
+    };
+
+
     return (
         <SafeAreaView>
             <StatusBar barStyle="light" backgroundColor={trueGray900} />
@@ -36,16 +48,17 @@ const Header = ({ title, withBack = false, withClose = false }) => {
                         )}
                         <Heading color={"$white"}>{title}</Heading>
                     </HStack>
-
-                    <HStack space={"2xl"} marginEnd={5} mr={4}>
-                        {/* <Image
-                            source={require("../assets/portal.png")}
-                            w="$20"
-                            h="$3"
-                            alt="Search Icon"
-                            role="img"
-                        /> */}
-                        <Text color="#faf0e6" bold>Talent Portal</Text>
+                    <HStack space={"2xl"} alignItems="center">
+                        <TouchableOpacity>
+                            <HStack>
+                                <TouchableOpacity onPress={Notifications}>
+                                    <Ionicons name="notifications" size={32} color="white" />
+                                </TouchableOpacity>
+                                {/* <TouchableOpacity onPress={Login}>
+                                    <Ionicons name="person" size={32} color="white" />
+                                </TouchableOpacity> */}
+                            </HStack>
+                        </TouchableOpacity>
                     </HStack>
                 </HStack>
             </Box>
