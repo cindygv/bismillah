@@ -2,7 +2,14 @@ import React, { useState, useEffect } from "react";
 import {
   Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
   ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal, Modal,
-  ButtonIcon, Center, View, Image, HStack, Divider, Handle
+  ButtonIcon, Center, View, Image, HStack, Divider, Handle, FormControlLabel, FormControlLabelText, AlertText, AlertDialog,
+  AlertDialogBackdrop,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogBody,
+  ButtonGroup,
+  Alert, ModalBackdrop, toggleAlert,
 } from "@gluestack-ui/themed";
 import Separator from "../components/separator";
 import { useNavigation, Link } from "expo-router";
@@ -25,11 +32,14 @@ const Login = () => {
     })
   }
 
+  const toggleAlert = (message) => {
+    setShowAlert(!showAlert);
+    setAlertMessage(message);
+  };
+
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
-
-
 
   const login = () => {
     if (email && password) {
@@ -55,15 +65,18 @@ const Login = () => {
         });
     } else {
       setFormError('Harap isi form login dengan lengkap dan benar');
-      toggleModal();
+      toggleAlert("");
+      setShowAlertDialog(true);
     }
   };
-
 
   const navigation = useNavigation();
   const Register = () => {
     navigation.navigate("register");
   };
+
+  const [showAlertDialog, setShowAlertDialog] = useState(false);
+
   return (
     <>
       <Box
@@ -76,42 +89,56 @@ const Login = () => {
           <Box alignItems="center"  >
             <Image role="img" alt="hello" w={117} h={121} mb={10} source={require('../assets/logotelport.png')} />
           </Box>
-          <Text color="black" lineHeight="$lg"> Email</Text>
-          <VStack space="md" marginTop={10}>
-            <Input
-              borderBottomWidth={3}
-              borderEndWidth={3}
-              borderTopWidth={1}
-              borderStartWidth={1}
-              rounded={7}
-              marginBottom={20}
-              borderColor='#021C35'
-            >
-              <InputField value={email} type="text" placeholder="Masukkan Email" onChangeText={(value) => setEmail(value)} />
-            </Input>
-          </VStack>
-          <Text color="black" lineHeight="$lg">Password</Text>
-          <VStack space="md">
-            <Input
-              borderBottomWidth={3}
-              borderEndWidth={3}
-              borderTopWidth={1}
-              borderStartWidth={1}
-              rounded={7}
-              marginBottom={20}
-              borderColor='#021C35'>
-              <InputField type={showPassword ? "text" : "password"} onChangeText={(text) => setPassword(text)} // Set password ke dalam state
-                value={password}
+          
+          {/* Email Input */}
+          <FormControl minWidth="$80" isRequired={true}>
+            <FormControlLabel>
+              <FormControlLabelText>Email</FormControlLabelText>
+            </FormControlLabel>
+            <VStack space="md" marginTop={10}>
+              <Input
+                borderBottomWidth={3}
+                borderEndWidth={3}
+                borderTopWidth={1}
+                borderStartWidth={1}
+                rounded={7}
+                marginBottom={20}
+                borderColor='#021C35'
+              >
+                <InputField value={email} type="text" placeholder="Masukkan Email" onChangeText={(value) => setEmail(value)} />
+              </Input>
+            </VStack>
+          </FormControl>
+          
+          {/* Password Input */}
+          <FormControl minWidth="$80" isRequired={true}>
+            <FormControlLabel>
+              <FormControlLabelText>Pasword</FormControlLabelText>
+            </FormControlLabel>
+            <VStack space="md" marginTop={10}>
+              <Input
+                borderBottomWidth={3}
+                borderEndWidth={3}
+                borderTopWidth={1}
+                borderStartWidth={1}
+                rounded={7}
+                marginBottom={20}
+                borderColor='#021C35'>
+                <InputField type={showPassword ? "text" : "password"} placeholder="Masukkan Password" onChangeText={(text) => setPassword(text)} // Set password ke dalam state
+                  value={password}
               />
-              <InputSlot pr="$3" onPress={handleState}>
-                <InputIcon
-                  as={showPassword ? EyeIcon : EyeOffIcon}
-                  color={'blue'}
-                />
-              </InputSlot>
-            </Input>
+                <InputSlot pr="$3" onPress={handleState}>
+                  <InputIcon
+                    as={showPassword ? EyeIcon : EyeOffIcon}
+                    color={'blue'}
+                  />
+                </InputSlot>
+              </Input>
             <Divider color="gray" thickness={1} flex={1} />
           </VStack>
+          </FormControl>
+          
+          {/* Login Button */}
           <Button onPress={() => login()} action="negative"
             borderBottomWidth={3}
             borderEndWidth={3}
@@ -121,13 +148,17 @@ const Login = () => {
             borderColor='#000000'>
             <Text bold color="white">Login</Text>
           </Button>
-          <HStack alignItems="center" my={10}>
+
+                    {/* Divider and Register Button */}
+                    <HStack alignItems="center" my={10}>
             <Divider color="gray" thickness={1} flex={1} />
             <Text color="gray" fontSize={16} px={3}>
               or
             </Text>
             <Divider color="gray" thickness={1} flex={1} />
           </HStack>
+          
+          {/* Register Button */}
           <Button onPress={Register} action="negative" borderBottomWidth={3}
             borderEndWidth={3}
             borderTopWidth={1}
@@ -136,20 +167,43 @@ const Login = () => {
             borderColor='#000000'>
             <Text bold color="white">Register</Text>
           </Button>
-          <Separator height={10} />
-        </FormControl>
-
-      </Box>
-      <Modal isOpen={isModalVisible} onClose={toggleModal}>
-        <Modal.Content>
-          <Modal.CloseButton />
-          <Modal.Header>
-            <Text>Terjadi Kesalahan</Text></Modal.Header>
-          <Modal.Body>
-            <Text>{formError}</Text>
-          </Modal.Body>
-        </Modal.Content>
-      </Modal>
+          <AlertDialog
+              isOpen={showAlertDialog}
+              onClose={() => {
+                setShowAlertDialog(false)
+              }}
+            >
+              <AlertDialogBackdrop />
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <Heading size="lg">DATA TIDAK LENGKAP</Heading>
+                </AlertDialogHeader>
+                <AlertDialogBody>
+                  <Text size="sm">
+                    Tel-Utizen! Kamu harus isi email dan passwordnya! 
+                  </Text>
+                </AlertDialogBody>
+                <AlertDialogFooter>
+                  <ButtonGroup space="lg">
+                    <Button
+                      variant="outline"
+                      action="secondary"
+                      onPress={() => {
+                        setShowAlertDialog(false)
+                      }}
+                    >
+                      <ButtonText>OK!</ButtonText>
+                    </Button>
+                  </ButtonGroup>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          </FormControl>
+        </Box>
+      <Alert isOpen={showAlert} onClose={() => setShowAlert(false)}>
+        <ModalBackdrop />
+        <AlertText>{alertMessage}</AlertText>
+      </Alert>
     </>
   );
 };

@@ -130,11 +130,7 @@ const AdminAdd = () => {
                                 </SelectDragIndicatorWrapper>
                                 <SelectItem label="ORMAWA" value="ORMAWA" onPress={() => setSelectedcategory("ORMAWA")} />
                                 <SelectItem label="UKM" value="UKM" onPress={() => setSelectedcategory("UKM")} />
-                                <SelectItem
-                                    label="LOMBA"
-                                    value="LOMBA"
-                                    onPress={() => setSelectedcategory("LOMBA")}
-                                />
+                                <SelectItem label="LOMBA" value="LOMBA" onPress={() => setSelectedcategory("LOMBA")} />
                                 <SelectItem label="KEPANITIAAN" value="KEPANITIAAN" onPress={() => setSelectedcategory("KEPANITIAAN")} />
                                 <SelectItem label="SEMINAR" value="SEMINAR" onPress={() => setSelectedcategory("SEMINAR")} />
                                 <SelectItem label="PENILITIAN" value="PENILITIAN" onPress={() => setSelectedcategory("PENELITIAN")} />
