@@ -11,7 +11,7 @@ const NotificationScreen = () => {
     { id: '3', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! IKUTI Kepanitiaan TANJIDOR pada tanggal 9-24 Januari 2024.', },
     { id: '4', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! Sitizen ikuti Lomba New Years E-sport pada tanggal 30 Desember 2023.', },
     { id: '5', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! Open Recruitment Kepanitiaan PKKMB pada tanggal 10 Juni 2025.' },
-    { id: '6', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! IKUTI Seminar Tel-U IISMA WEEK 2024 pada tanggal 9 Januari 2024.', },
+    { id: '6', title: 'Pengingat', message: 'JANGAN TELAT DAFTAR! IKUTILAH Seminar Tel-U IISMA WEEK 2024 pada tanggal 9 Januari 2024.', },
 
   ];
 
