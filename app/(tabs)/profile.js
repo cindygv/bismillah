@@ -60,7 +60,7 @@ const Profile = () => {
     <>
       <Header title={"Profile"} />
       <ScrollView>
-        <Box flex={1} bgColor='#fffff' alignItems='center'>
+        <Box flex={1} bgColor='#ffffff' alignItems='center'>
           <Box flex={1} alignItems="center">
           <Heading color="red" fontSize={30} marginTop={20}>{profile?.nama}</Heading>
             <Image role="img" alt="20" width={200} height={200} rounded={50} marginTop={10}

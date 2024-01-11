@@ -44,7 +44,7 @@ const EditProfile = ({ route }) => {
     <>
       <Header title={"Edit Profile"} withBack="true" />
       <ScrollView>
-        <Box flex={1} bgColor='#fffff' alignItems='center'>
+        <Box flex={1} bgColor='#ffffff' alignItems='center'>
           <Box flex={1} alignItems="center">
           <Heading color="red" fontSize={30} marginTop={20}>{profile?.nama}</Heading>
             <Image role="img" alt="20" width={200} height={200} rounded={50} marginTop={10}
@@ -107,6 +107,13 @@ const EditProfile = ({ route }) => {
               <Button alignSelf={"center"} onPress={handleSave} bg={"#ffff"} mt={3} w={"90%"} h={50} rounded={10} marginTop={40} >
                 <Heading color={"red"} fontSize={20}>Save</Heading>
               </Button>
+
+                <Button alignSelf={"center"} onPress={async () => {
+                  await editProfile(profile);
+                  navigation.goBack();
+                }} bg={"#ffffff"} mt={3} w={"90%"} h={50} rounded={10} marginTop={100} >
+                  <Heading color={"green"} fontSize={20}>Save</Heading>
+                </Button>
               </VStack>
             </Box>
           </Box>
