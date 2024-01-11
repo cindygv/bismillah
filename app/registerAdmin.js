@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {
-  Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
-  ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
-  ButtonIcon, Center, View, Alert, Modal,
-  ModalBackdrop,
-  AlertText,
+    Heading, FormControl, VStack, Text, Input, InputField, InputSlot, InputIcon,
+    ButtonText, showPassword, handleState, EyeIcon, EyeOffIcon, Button, Box, setShowModal,
+    ButtonIcon, Center, View, Image, HStack, Divider,
 } from "@gluestack-ui/themed";
 import Separator from "../components/separator";
 import { useNavigation, Link } from "expo-router";
@@ -21,10 +19,10 @@ const Register = () => {
     const [alertMessage, setAlertMessage] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const handleState = () => {
-        setShowPassword((showState) => {
+    setShowPassword((showState) => {
         return !showState
-        })
-    }
+    })
+}
 
     const toggleAlert = (message) => {
         setShowAlert(!showAlert);
@@ -144,16 +142,18 @@ const Register = () => {
                 </Center>
                 </Link> */}
 
-          </VStack>
-          <Separator height={10} />
-          <Button onPress={() => {
-            onRegisterAdmin();
-          }}
-          ><Text color="white">Register</Text></Button>
-        </FormControl>
-      </Box>
-    </>
-  );
+            </VStack>
+            <Separator height={10} />
+            {/* <Button size="md" variant="solid" action="negative" isDisabled={false} isFocusVisible={false} >
+                <Link href="/register">
+                <ButtonText>Register</ButtonText>
+                </Link>
+                <ButtonIcon />
+            </Button> */}
+            </FormControl>
+        </Box>
+        </>
+    );
 };
 
 export default Register;
