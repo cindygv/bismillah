@@ -11,17 +11,17 @@ import { loginAdmin } from "../actions/AuthAction"
 
 
 
-const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [showAlert, setShowAlert] = useState(false);
-    const [alertMessage, setAlertMessage] = useState("");
-    const [showPassword, setShowPassword] = useState(false);
-    const handleState = () => {
-    setShowPassword((showState) => {
-        return !showState
-    })
-}
+    const Login = () => {
+        const [email, setEmail] = useState("");
+        const [password, setPassword] = useState("");
+        const [showAlert, setShowAlert] = useState(false);
+        const [alertMessage, setAlertMessage] = useState("");
+        const [showPassword, setShowPassword] = useState(false);
+        const handleState = () => {
+        setShowPassword((showState) => {
+            return !showState
+        })
+    }
 
 
     const login = () => {
@@ -47,14 +47,14 @@ const Login = () => {
         <>
         <ScrollView>
             <Box
-                w={"100%"}
-                mt={140}
-                alignSelf="center"
-                borderColor="gray"
-                alignContent="$center"
-                justifyContent="$center">
-                <Box alignItems="center"   >
-                    <Image role="img" alt="hello" w={117} h={121} mb={1} source={require('../assets/logotelport.png')} />
+            w={"100%"}
+            mt={140}
+            alignSelf="center"
+            borderColor="gray"
+            alignContent="$center"
+            justifyContent="$center">
+            <Box alignItems="center"   >
+                <Image role="img" alt="hello" w={117} h={121} mb={1} source={require('../assets/logotelport.png')} />
             </Box>
             <FormControl
                 p="$4"
@@ -69,7 +69,7 @@ const Login = () => {
                 }}
             >
 
-            <VStack space="xl" mt={10}>
+                <VStack space="xl" mt={10}>
                 <Center>
                     <Heading color="black" lineHeight="$2xl">
                     Login sebagai Admin
@@ -119,8 +119,8 @@ const Login = () => {
                     borderColor='#000000'>
                     <Text bold color="white">Login</Text>
                 </Button>
-            </VStack>
-            <Separator height={10} />
+                </VStack>
+                <Separator height={10} />
             </FormControl>
             </Box>
         </ScrollView>

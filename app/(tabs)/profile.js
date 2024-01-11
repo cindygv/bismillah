@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Header } from "../../components";
 import { clearStorage, getData } from "../../utils";
 import FIREBASE from "../../config/FIREBASE";
+import { Ionicons } from "@expo/vector-icons";
 
 const Profile = () => {
   const navigation = useNavigation();
@@ -62,11 +63,10 @@ const Profile = () => {
       <ScrollView>
         <Box flex={1} bgColor='#fffff' alignItems='center'>
           <Box flex={1} alignItems="center">
-          <Heading color="red" fontSize={30} marginTop={20}>{profile?.nama}</Heading>
-            <Image role="img" alt="20" width={200} height={200} rounded={50} marginTop={10}
-              source={require('../../assets/logoprofile.png')} />
+          <Heading color="black" fontSize={30} marginTop={20}>{profile?.nama}</Heading>
+          <Ionicons name="person-circle-outline" size={200} color="#800000" />
           </Box>
-          <Box flex={2} marginTop={20} width={"100%"} borderTopLeftRadius={50} borderTopRightRadius={50} bg="$#800000" >
+          <Box flex={2} marginTop={35} width={"100%"} borderTopLeftRadius={50} borderTopRightRadius={50} bg="$#800000" >
             <Box borderRadius={10} width={"15%"} height={4} bg="white" alignSelf="center" marginTop={20}></Box>
             <HStack justifyContent="space-between" mx={20}>
               <Box></Box>

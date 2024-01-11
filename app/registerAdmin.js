@@ -19,9 +19,9 @@ const Register = () => {
     const [alertMessage, setAlertMessage] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const handleState = () => {
-    setShowPassword((showState) => {
-        return !showState
-    })
+        setShowPassword((showState) => {
+            return !showState
+        })
 }
 
     const toggleAlert = (message) => {
