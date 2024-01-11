@@ -40,24 +40,27 @@ const INFO = () => {
                 </Box>
                 <Box padding={10} borderBottomWidth={0.5}>
                     <HStack>
-                        <Icon as={LinkIcon} m="$2" w="$4" h="$4" />
-                        <Link href="bit.ly/PKKMB2024">
+                        <Icon as={LinkIcon} m="$2" w="$4" h="$4"></Icon>
+                        <Link href={poster.link}>
                             <LinkText padding={5} onPress={() => Linking.openURL(poster.link)}>
                                 {poster.link}
                             </LinkText>
                         </Link>
                     </HStack>
                 </Box>
+
                 <Box padding={10} borderBottomWidth={0.5}>
                     <HStack>
                         <Icon as={GlobeIcon} m="$2" w="$4" h="$4"></Icon>
-                        <Link href="https://www.instagram.com/dewangkara.maetala/">
-                            <LinkText padding={5} onPress={() => Linking.openURL(poster.socialmedia)}>
-                                {poster.link}
+                        <Link href={`https://www.instagram.com/${poster.socialmedia}`}>
+                            <LinkText padding={5} onPress={() => Linking.openURL(`https://www.instagram.com/${poster.socialmedia}`)}>
+                                {poster.socialmedia}
                             </LinkText>
                         </Link>
                     </HStack>
                 </Box>
+ 
+
             </ScrollView>
         </>
     )
