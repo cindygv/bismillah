@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Heading, Box, Text, Pressable, VStack, ScrollView, Button, HStack } from "@gluestack-ui/themed";
 import { useNavigation } from "@react-navigation/native";
-import { Image } from "@gluestack-ui/themed"
-import { Link } from 'expo-router';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Header } from "../../components";
 import { clearStorage, getData } from "../../utils";
