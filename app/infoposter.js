@@ -33,7 +33,7 @@ const INFO = () => {
                 <Box padding={10} borderBottomWidth={0.5}>
                     <HStack>
                         <Icon as={PhoneIcon} m="$2" w="$4" h="$4" />
-                        <Link href="whatsapp://send?text=Hallo saya mau mendaftar!&phone=+6282233894722">
+                        <Link href={`whatsapp://send?text=Hallo%20saya%20mau%20mendaftar!&phone=${encodeURIComponent(poster.contact)}`}>
                             <LinkText padding={5}>{poster.contact}</LinkText>
                         </Link>
                     </HStack>
