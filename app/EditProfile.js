@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Alert } from 'react-native';
 import { Heading, Box, Text, Pressable, VStack, ScrollView, Button, HStack, Input, InputField, TouchableOpacity, } from "@gluestack-ui/themed";
-import { Image } from "@gluestack-ui/themed"
 import { useNavigation } from "@react-navigation/native";
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { getData, storeData } from '../utils/localStorage';
 import { Header } from "../components";
 import Separator from "../components/separator";

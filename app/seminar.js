@@ -1,45 +1,134 @@
-import React from 'react';
-import { Center, Heading, Image, Box, Text } from "@gluestack-ui/themed";
+import { ScrollView, Box, VStack, Text, Image, Heading, Button, HStack, } from "@gluestack-ui/themed";
+import { Link, router, useLocalSearchParams } from "expo-router";
 import { Header } from "../components";
-import { View } from "react-native";
-import { Link } from 'expo-router';
+import React from 'react';
+import { TouchableOpacity } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-const seminar = () => {
-    return (
-        <>
-            <Header title={"SEMINAR"} withBack="true"/>
-            <Center flex={1}>
-                {/* Baris 1 */}
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                    <Box sx={{ width: 150, height: 150, aspectRatio: 1, backgroundColor: '#dcdcdc', padding: 5, alignItems: 'center', justifyContent: 'center', borderRadius: 10, display: 'flex', flexDirection: 'row', margin: 35, borderRadius: 10, borderColor: '#dcdcdc', borderWidth: 2, elevation: 10, shadowColor: '#000', shadowOffset: { width: 5, height: 5, }, shadowOpacity: 0.5, shadowRadius: 10, }}>
-                        <Link href="/ukki">
-                            <View style={{ alignItems: 'center' }}>
-                                <Image
-                                source={require('../assets/logomsib.png')}   
-                                style={{ width: 135, height: 135, resizeMode: 'contain' }}
-                                />
-                            </View>
-                        </Link>
-                    </Box>
-                </View>
+const Seminar = () => {
 
-                {/* Baris 2 */}
-                <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                    <Box sx={{ width: 150, height: 150, aspectRatio: 1, backgroundColor: '#dcdcdc', padding: 5, alignItems: 'center', justifyContent: 'center', borderRadius: 10, display: 'flex', flexDirection: 'row', margin: 25, borderRadius: 10, borderColor: '#dcdcdc', borderWidth: 2, elevation: 10, shadowColor: '#000', shadowOffset: { width: 5, height: 5, }, shadowOpacity: 0.5, shadowRadius: 10, }}>
-                        <Link href="/coder">
-                            <View style={{ alignItems: 'center' }}>
-                                <Image
-                                source={require('../assets/logoqubisa.png')}   
-                                style={{ width: 100, height: 100, resizeMode: 'contain' }}
-                                />
-                            </View>
-                        </Link>
-                    </Box>
-                </View>
-            </Center>
-        </>
-    );
+  const handleBoxPress = (screenName) => {
+    router.push(screenName);
+  };
+
+  return (
+    <>
+      <Header title={"Seminar"} />
+        <Heading lineHeight={"$5xl"} color="$black" ml={"$5"}>
+          Pendaftaran Seminar
+        </Heading>
+        <TouchableOpacity onPress={() => handleBoxPress('formseminar')}>
+          <Box
+            w={110}
+            h="$100"
+            mr="$10"
+            bg="$coral"
+            ml={19}
+            borderRadius="$3xl"
+            borderWidth={2}
+            alignItems="center"
+            softShadow=""
+          >
+            <Link
+              href={{
+                pathname: "/formseminar"
+              }}
+            >
+              <HStack>
+                <Ionicons
+                  name="add-circle-outline"
+                  size={30}
+                  color="floralwhite"
+                  paddingBottom="3"
+                />
+                <Text color="floralwhite" fontWeight="bold" size="md" pt="$1.5">
+                  Form
+                </Text>
+              </HStack>
+            </Link>
+          </Box>
+        </TouchableOpacity>
+        <ScrollView flex={1} backgroundColor="fwhite">
+        <TouchableOpacity onPress={() => handleBoxPress('detailcoding')}>
+          <Box
+            maxWidth='$54'
+            borderColor='$borderLight200'
+            borderRadius='$lg'
+            borderWidth='$1'
+            my="$4"
+            overflow="hidden"
+            sx={{
+              "@base": {
+                mx: '$5',
+              },
+              "_dark": {
+                bg: "$backgroundDark900",
+                borderColor: '$borderDark800'
+              },
+            }}
+          >
+            <Box>
+              <Image
+                h={150}
+                width="100%"
+                source={require('../assets/codingseminar.jpeg')}
+              />
+            </Box>
+            <Box>
+              <VStack px='$6' pt='$4' pb='$6'>
+                <Heading _dark={{ color: "$textLight200" }} size='sm'>
+                  Seminar Coding
+                </Heading>
+                <Text my='$1.5' _dark={{ color: "$textLight200" }} fontSize='$xs'>
+                Seminar coding ini merupakan kesempatan luar biasa bagi para pengembang perangkat lunak, mahasiswa IT, dan para profesional teknologi untuk 
+                menjelajahi dunia yang terus berkembang dalam pengodingan dan pemrograman. Dengan fokus pada tren terkini, alat-alat mutakhir, dan praktik terbaik, 
+                seminar ini dirancang untuk memberikan wawasan mendalam dan inspirasi kepada peserta.
+                </Text>
+              </VStack>
+            </Box>
+          </Box>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => handleBoxPress('detailbisnis')}>
+          <Box
+            maxWidth='$54'
+            borderColor='$borderLight200'
+            borderRadius='$lg'
+            borderWidth='$1'
+            my="$4"
+            overflow="hidden"
+            sx={{
+              "@base": {
+                mx: '$5',
+              },
+              "_dark": {
+                bg: "$backgroundDark900",
+                borderColor: '$borderDark800'
+              },
+            }}
+          >
+            <Box>
+              <Image
+                h={150}
+                width="100%"
+                source={require('../assets/seminarbisnis.jpeg')}
+              />
+            </Box>
+            <VStack px='$6' pt='$4' pb='$6'>
+              <Heading _dark={{ color: "$textLight200" }} size='sm'>
+                Seminar Bisnis
+              </Heading>
+              <Text my='$1.5' _dark={{ color: "$textLight200" }} fontSize='$xs'>
+                Secara umum, seminar bisnis adalah sebuah acara formal yang diadakan 
+                dengan tujuan menyediakan platform bagi para profesional, pengusaha, atau individu yang tertarik untuk mendapatkan dan bertukar informasi terkait dengan berbagai aspek bisnis. Seminar ini dapat mencakup berbagai topik, mulai dari strategi pemasaran,
+                 manajemen keuangan, hingga inovasi dan teknologi dalam dunia bisnis.
+              </Text>
+            </VStack>
+          </Box>
+        </TouchableOpacity>
+      </ScrollView>
+    </>
+  );
 };
 
-
-export default seminar;
+export default Seminar;

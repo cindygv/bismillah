@@ -19,4 +19,3 @@ firebase.initializeApp({
 const FIREBASE = firebase;
 
 export default FIREBASE;
-

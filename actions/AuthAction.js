@@ -183,7 +183,7 @@ export const editProfile = async (updatedProfile) => {
     await userRef.update(updatedProfile);
 
     // Menampilkan pesan sukses
-    Alert.alert('Success', 'Profile updated successfully');
+    Alert.alert('Sukses', 'Profile telah di update');
   } catch (error) {
     // Menampilkan pesan kesalahan jika terjadi error
     Alert.alert('Error', 'Failed to update profile');
