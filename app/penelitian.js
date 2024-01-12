@@ -13,7 +13,7 @@ const Penelitian = () => {
 
   return (
     <>
-      <Header title={"Penelitian"} />
+      <Header title={"Penelitian"} withBack="true" />
         <Heading lineHeight={"$5xl"} color="$black" ml={"$5"}>
           Pendaftaran Penelitian
         </Heading>

@@ -17,6 +17,9 @@ const TabsLayout = () => {
                         case "AdminAdd":
                             iconName = "add-circle-outline";
                             break;
+                        case "AdminAddCat":
+                            iconName="add-outline";
+                            break;
                     }
                     return (
                         <Ionicons
@@ -41,7 +44,7 @@ const TabsLayout = () => {
         >
             <Tabs.Screen name="AdminHome" options={{ title: "AdminHome", ...noHead }} />
             <Tabs.Screen name="AdminAdd" options={{ title: "AdminAdd", ...noHead }} />
-            
+            <Tabs.Screen name="AdminAddCat" options={{ title: "AdminAddCat", ...noHead }} />
         </Tabs>
     );
 };

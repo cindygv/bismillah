@@ -5,7 +5,7 @@ import { Header } from "../components";
 const UKKI = () => {
     return (
         <ScrollView>
-            <Header title={"UKKI"} />
+            <Header title={"UKKI"} withBack="true"/>
             <Box paddingHorizontal={10} paddingVertical={20} backgroundColor="#eeeeee">
                 <Text fontSize={23} fontWeight="bold">
                     UKKI Al-Habsyi Institut Teknologi Telkom Surabaya

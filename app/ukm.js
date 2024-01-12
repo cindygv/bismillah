@@ -7,7 +7,7 @@ import { Link } from 'expo-router';
 const Ukm = () => {
     return (
         <>
-            <Header title={"UKM"} />
+            <Header title={"UKM"} withBack="true"/>
             <Center flex={1}>
                 {/* Baris 1 */}
                 <Text sx={{ fontWeight: "bold" }}>UKM Kerohanian</Text>

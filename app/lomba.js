@@ -7,7 +7,7 @@ import { Link } from 'expo-router';
 const lomba = () => {
     return (
         <>
-            <Header title={"LOMBA"} />
+            <Header title={"LOMBA"} withBack="true"/>
             <Center flex={1}>
                 {/* Baris 1 */}
                 <Text sx={{ fontWeight: "bold" }}>LOMBA INTERNAL</Text>
