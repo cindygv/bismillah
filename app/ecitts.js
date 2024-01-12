@@ -5,7 +5,7 @@ import { Header } from "../components";
 const ECITTS = () => {
     return (
         <>
-            <Header title={"ECITTS"} />
+            <Header title={"ECITTS"} withBack="true"/>
             <Center flex={1}>
                 <Heading>Halaman ECITTS</Heading>
                 {/* Isi halaman BEM di sini */}

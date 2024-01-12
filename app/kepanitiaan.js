@@ -12,7 +12,7 @@ const kepanitiaan = () => {
                 {/* Baris 1 */}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                     <Box sx={{ width: 100, height: 100, aspectRatio: 1, backgroundColor: '#dcdcdc', padding: 5, alignItems: 'center', justifyContent: 'center', borderRadius: 10, display: 'flex', flexDirection: 'row', margin: 35, borderRadius: 10, borderColor: '#dcdcdc', borderWidth: 2, elevation: 10, shadowColor: '#000', shadowOffset: { width: 5, height: 5, }, shadowOpacity: 0.5, shadowRadius: 10, }}>
-                        <Link href="/ukki">
+                        <Link href="/pkkmb">
                             <View style={{ alignItems: 'center' }}>
                                 <Image
                                 source={require('../assets/logopkkmb.png')}   

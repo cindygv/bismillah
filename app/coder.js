@@ -5,7 +5,7 @@ import { Header } from "../components";
 const CODER = () => {
     return (
         <>
-            <Header title={"CODER"} />
+            <Header title={"CODER"} withBack="true"/>
             <Center flex={1}>
                 <Heading>Halaman CODER</Heading>
                 {/* Isi halaman BEM di sini */}
