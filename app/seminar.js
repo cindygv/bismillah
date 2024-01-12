@@ -5,7 +5,7 @@ import React from 'react';
 import { TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const Reservation = () => {
+const Seminar = () => {
 
   const handleBoxPress = (screenName) => {
     router.push(screenName);
@@ -49,7 +49,7 @@ const Reservation = () => {
           </Box>
         </TouchableOpacity>
         <ScrollView flex={1} backgroundColor="fwhite">
-        <TouchableOpacity onPress={() => handleBoxPress('/formseminar')}>
+        <TouchableOpacity onPress={() => handleBoxPress('detailcoding')}>
           <Box
             maxWidth='$54'
             borderColor='$borderLight200'
@@ -71,7 +71,7 @@ const Reservation = () => {
               <Image
                 h={150}
                 width="100%"
-                source={require('../assets/firli2.jpg')}
+                source={require('../assets/codingseminar.jpeg')}
               />
             </Box>
             <Box>
@@ -89,7 +89,7 @@ const Reservation = () => {
           </Box>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => handleBoxPress('DetailPenitipan')}>
+        <TouchableOpacity onPress={() => handleBoxPress('detailbisnis')}>
           <Box
             maxWidth='$54'
             borderColor='$borderLight200'
@@ -111,15 +111,17 @@ const Reservation = () => {
               <Image
                 h={150}
                 width="100%"
-                source={require('../assets/firli2.jpg')}
+                source={require('../assets/seminarbisnis.jpeg')}
               />
             </Box>
             <VStack px='$6' pt='$4' pb='$6'>
               <Heading _dark={{ color: "$textLight200" }} size='sm'>
-                Paket Penitipan Hewan
+                Seminar Bisnis
               </Heading>
               <Text my='$1.5' _dark={{ color: "$textLight200" }} fontSize='$xs'>
-                Menyediakan layanan penitipan hewan dengan beberapa kamar pilihan
+                Secara umum, seminar bisnis adalah sebuah acara formal yang diadakan 
+                dengan tujuan menyediakan platform bagi para profesional, pengusaha, atau individu yang tertarik untuk mendapatkan dan bertukar informasi terkait dengan berbagai aspek bisnis. Seminar ini dapat mencakup berbagai topik, mulai dari strategi pemasaran,
+                 manajemen keuangan, hingga inovasi dan teknologi dalam dunia bisnis.
               </Text>
             </VStack>
           </Box>
@@ -129,4 +131,4 @@ const Reservation = () => {
   );
 };
 
-export default Reservation;
+export default Seminar;
