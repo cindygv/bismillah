@@ -13,7 +13,7 @@ const Seminar = () => {
 
   return (
     <>
-      <Header title={"Seminar"} />
+      <Header title={"Seminar"} withBack="true"/>
         <Heading lineHeight={"$5xl"} color="$black" ml={"$5"}>
           Pendaftaran Seminar
         </Heading>
