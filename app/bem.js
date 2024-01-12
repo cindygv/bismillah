@@ -5,7 +5,7 @@ import { Header } from "../components";
 const BEM = () => {
     return (
         <ScrollView>
-            <Header title={"Profil HMSI"} />
+            <Header title={"Profil BEM"} withBack="true"/>
             <Box paddingHorizontal={10} paddingVertical={20} backgroundColor="#eeeeee">
                 <Text fontSize={23} fontWeight="bold">
                     Badan Eksekutif Mahasiswa Institut Teknologi Telkom Surabaya
