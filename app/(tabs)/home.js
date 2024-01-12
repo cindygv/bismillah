@@ -66,7 +66,7 @@ const Home = () => {
                 >
                     <Box>
                         <Image source={{ uri: item.imageUrl }} alt="home" height={500} width={300} />
-                        <Text fontSize={16} paddingTop={10}>
+                        <Text textAlign="center" fontSize={16} paddingTop={10}>
                             {item.category}
                         </Text>
                     </Box>
@@ -90,9 +90,6 @@ const Home = () => {
                 <ModalContent>
                     <ModalHeader>
                         <Heading size="lg">{selectedItem.category}</Heading>
-                        <ModalCloseButton onPress={onClose}>
-                            <Icon as={CloseIcon} />
-                        </ModalCloseButton>
                     </ModalHeader>
                     <ModalBody>
                         <Image source={{ uri: selectedItem.imageUrl }} alt="home" height={500} width={300} />
