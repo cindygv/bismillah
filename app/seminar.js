@@ -7,7 +7,7 @@ import { Link } from 'expo-router';
 const seminar = () => {
     return (
         <>
-            <Header title={"SEMINAR"} />
+            <Header title={"SEMINAR"} withBack="true"/>
             <Center flex={1}>
                 {/* Baris 1 */}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>

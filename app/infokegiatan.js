@@ -3,18 +3,17 @@ import { Header } from "../components";
 import { useRoute } from '@react-navigation/native';
 import { Linking } from 'react-native';
 
-
-const INFO = () => {
+const Kegiatan = () => {
     const route = useRoute();
-    const { poster } = route.params;
+    const { Kegiatan } = route.params;
     return (
         <>
-            <Header title={"DETAIL POSTER"} withBack />
+            <Header title={"DETAIL KEGIATAN"} withBack />
             <ScrollView>
                 <Box padding={10} borderBottomWidth={0.5}>
                     <Image height={500} width={500}
                         size="md" borderRadius="$none"
-                        source={{ uri: poster.imageUrl }}
+                        source={{ uri: Kegiatan.imageUrl }}
                         alt="image"
                     />
                 </Box>
@@ -64,4 +63,4 @@ const INFO = () => {
     )
 }
 
-export default INFO
+export default Kegiatan

@@ -5,7 +5,7 @@ import { Header } from "../components";
 const DPM = () => {
     return (
         <>
-            <Header title={"DPM"} />
+            <Header title={"DPM"} withBack="true" />
             <Center flex={1}>
                 <Heading>Halaman DPM</Heading>
                 {/* Isi halaman BEM di sini */}

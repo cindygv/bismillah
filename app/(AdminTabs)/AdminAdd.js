@@ -7,8 +7,6 @@ import FIREBASE from "../../config/FIREBASE";
 import { Alert } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-
 const AdminAdd = () => {
     const [image, setImage] = useState(null);
     const [selectedCategory, setSelectedcategory] = useState('');

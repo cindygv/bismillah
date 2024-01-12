@@ -7,7 +7,7 @@ import { Link } from 'expo-router';
 const Ormawa = () => {
     return (
         <>
-            <Header title={"ORMAWA"} />
+            <Header title={"ORMAWA"} withBack="true"/>
             <Center flex={1}>
                 {/* Baris 1 */}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
