@@ -5,7 +5,7 @@ import React from 'react';
 import { TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-const Reservation = () => {
+const Penelitian = () => {
 
   const handleBoxPress = (screenName) => {
     router.push(screenName);
@@ -49,7 +49,7 @@ const Reservation = () => {
           </Box>
         </TouchableOpacity>
         <ScrollView flex={1} backgroundColor="fwhite">
-        <TouchableOpacity onPress={() => handleBoxPress('/formspenelitian')}>
+        <TouchableOpacity onPress={() => handleBoxPress('detailiot')}>
           <Box
             maxWidth='$54'
             borderColor='$borderLight200'
@@ -71,25 +71,23 @@ const Reservation = () => {
               <Image
                 h={150}
                 width="100%"
-                source={require('../assets/firli2.jpg')}
+                source={require('../assets/penelitian1.jpeg')}
               />
             </Box>
             <Box>
               <VStack px='$6' pt='$4' pb='$6'>
                 <Heading _dark={{ color: "$textLight200" }} size='sm'>
-                  Seminar Coding
+                "Pengaruh Implementasi Teknologi Internet of Things (IoT) terhadap Efisiensi Energi di Lingkungan Rumah Tangga"
                 </Heading>
                 <Text my='$1.5' _dark={{ color: "$textLight200" }} fontSize='$xs'>
-                Seminar coding ini merupakan kesempatan luar biasa bagi para pengembang perangkat lunak, mahasiswa IT, dan para profesional teknologi untuk 
-                menjelajahi dunia yang terus berkembang dalam pengodingan dan pemrograman. Dengan fokus pada tren terkini, alat-alat mutakhir, dan praktik terbaik, 
-                seminar ini dirancang untuk memberikan wawasan mendalam dan inspirasi kepada peserta.
+                Penelitian ini bertujuan untuk mengevaluasi dan menganalisis dampak implementasi teknologi Internet of Things (IoT) terhadap efisiensi energi di lingkungan rumah tangga. Melibatkan survei dan pemantauan langsung di sejumlah rumah tangga, penelitian ini akan menilai bagaimana perangkat yang terhubung ke IoT, seperti thermostat pintar, lampu pintar, dan perangkat lainnya, dapat mengoptimalkan penggunaan energi. Data akan dikumpulkan selama beberapa bulan untuk mengidentifikasi pola penggunaan energi sebelum dan setelah penerapan teknologi IoT. Hasil penelitian diharapkan dapat memberikan wawasan tentang potensi penghematan energi dan dampak positifnya terhadap keberlanjutan di rumah tangga modern.
                 </Text>
               </VStack>
             </Box>
           </Box>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => handleBoxPress('DetailPenitipan')}>
+        <TouchableOpacity onPress={() => handleBoxPress('detailkecemasan')}>
           <Box
             maxWidth='$54'
             borderColor='$borderLight200'
@@ -111,15 +109,15 @@ const Reservation = () => {
               <Image
                 h={150}
                 width="100%"
-                source={require('../assets/firli2.jpg')}
+                source={require('../assets/penelitian2.jpeg')}
               />
             </Box>
             <VStack px='$6' pt='$4' pb='$6'>
               <Heading _dark={{ color: "$textLight200" }} size='sm'>
-                Paket Penitipan Hewan
+              "Pengaruh Kecemasan Sosial pada Kesejahteraan Mental Remaja: Sebuah Kajian Longitudinal"
               </Heading>
               <Text my='$1.5' _dark={{ color: "$textLight200" }} fontSize='$xs'>
-                Menyediakan layanan penitipan hewan dengan beberapa kamar pilihan
+              Penelitian ini memiliki tujuan untuk menyelidiki dampak kecemasan sosial pada kesejahteraan mental remaja dalam jangka waktu yang lebih panjang. Dengan menggunakan pendekatan longitudinal, penelitian ini akan mengumpulkan data dari kelompok remaja yang mengalami tingkat kecemasan sosial yang berbeda-beda selama beberapa tahun. 
               </Text>
             </VStack>
           </Box>
@@ -129,4 +127,4 @@ const Reservation = () => {
   );
 };
 
-export default Reservation;
+export default Penelitian;
