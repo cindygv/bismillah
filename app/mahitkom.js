@@ -5,7 +5,7 @@ import { Header } from "../components";
 const MAHITKOM = () => {
     return (
         <ScrollView>
-            <Header title={"Profil MAHITKOM"} />
+            <Header title={"Profil MAHITKOM"} withBack="true"/>
             <Box paddingHorizontal={10} paddingVertical={20} backgroundColor="#eeeeee">
                 <Text fontSize={23} fontWeight="bold">
                     Himpunan Mahasiswa Sistem Informasi Institut Teknologi Telkom Surabaya

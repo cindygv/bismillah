@@ -5,7 +5,7 @@ import { Header } from "../components";
 const PKM = () => {
     return (
         <ScrollView>
-            <Header title={"Profil PKM"} />
+            <Header title={"Profil PKM"} withBack="true"/>
             <Box paddingHorizontal={10} paddingVertical={20} backgroundColor="#eeeeee">
                 <Text fontSize={23} fontWeight="bold">
                     Himpunan Mahasiswa Sistem Informasi Institut Teknologi Telkom Surabaya

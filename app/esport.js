@@ -5,7 +5,7 @@ import { Header } from "../components";
 const ESPORT = () => {
     return (
         <>
-            <Header title={"ESPORT"} />
+            <Header title={"ESPORT"} withBack="true"/>
             <Center flex={1}>
                 <Heading>Halaman ESPORT</Heading>
                 {/* Isi halaman BEM di sini */}

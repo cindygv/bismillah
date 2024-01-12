@@ -5,7 +5,7 @@ import { Header } from "../components";
 const HMTI = () => {
     return (
         <>
-            <Header title={"HMTI"} />
+            <Header title={"HMTI"} withBack="true"/>
             <Center flex={1}>
                 <Heading>Halaman HMTI</Heading>
                 {/* Isi halaman BEM di sini */}

@@ -5,7 +5,7 @@ import { Header } from "../components";
 const HMSI = () => {
     return (
         <ScrollView>
-            <Header title={"Profil HMSI"} />
+            <Header title={"Profil HMSI"} withBack="true"/>
             <Box paddingHorizontal={10} paddingVertical={20} backgroundColor="#eeeeee">
                 <Text fontSize={23} fontWeight="bold">
                     Himpunan Mahasiswa Sistem Informasi Institut Teknologi Telkom Surabaya

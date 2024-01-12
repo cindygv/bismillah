@@ -5,7 +5,7 @@ import { Header } from "../components";
 const VOLLEY = () => {
     return (
         <ScrollView>
-            <Header title={"Profil VOLLEY"} />
+            <Header title={"Profil VOLLEY"} withBack="true"/>
             <Box paddingHorizontal={10} paddingVertical={20} backgroundColor="#eeeeee">
                 <Text fontSize={23} fontWeight="bold">
                     Himpunan Mahasiswa Sistem Informasi Institut Teknologi Telkom Surabaya

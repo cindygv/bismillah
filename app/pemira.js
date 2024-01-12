@@ -5,7 +5,7 @@ import { Header } from "../components";
 const PEMIRA = () => {
     return (
         <ScrollView>
-            <Header title={"Profil PEMIRA"} />
+            <Header title={"Profil PEMIRA"} withBack="true"/>
             <Box paddingHorizontal={10} paddingVertical={20} backgroundColor="#eeeeee">
                 <Text fontSize={23} fontWeight="bold">
                     Himpunan Mahasiswa Sistem Informasi Institut Teknologi Telkom Surabaya

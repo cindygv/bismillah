@@ -5,7 +5,7 @@ import { Header } from "../components";
 const ROBOTIKA = () => {
     return (
         <ScrollView>
-            <Header title={"Profil ROBOTIKA"} />
+            <Header title={"Profil ROBOTIKA"} withBack="true"/>
             <Box paddingHorizontal={10} paddingVertical={20} backgroundColor="#eeeeee">
                 <Text fontSize={23} fontWeight="bold">
                     Himpunan Mahasiswa Sistem Informasi Institut Teknologi Telkom Surabaya
